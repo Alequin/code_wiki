@@ -9,7 +9,11 @@ app.get('/', function (req, res) {
 
 app.use(express.static('client/build'));
 
-app.use("/page", require("./controllers/PagesController.js"));
+app.use("/db/page", require("./controllers/PagesController.js"));
+
+app.get('/*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client/build/index.html'))
+})
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

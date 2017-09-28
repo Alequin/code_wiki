@@ -5,7 +5,8 @@ import { render } from 'react-dom'
 import css from './base-styles.scss'
 
 // import components
-import Index from './components/Index.js'
+import Index from './containers/Index.jsx'
+import Viewer from './containers/Viewer.jsx'
 
 // import react router dependencies
 import { Router, Route } from 'react-router'
@@ -17,8 +18,9 @@ const router = (
 	<Provider store={store}>
 		<Router history={history}>
 			<div>
-				{/* <Route path="/" component={Index} /> */}
+				<Route path="/" component={Index} />
 				<Route exact path="/" component={Index} />
+				<Route path="/view" component={Viewer} />
 			</div>
 		</Router>
 	</Provider>
