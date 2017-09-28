@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+
+import css from './Viewer.scss'
 
 const actionCreators = {};
 
@@ -14,14 +14,6 @@ class Viewer extends Component {
       </div>
     )
   }
-
-  // mapStateToProps(state, router) {
-	//    return Object.assign({}, state)
-  // }
-  //
-  // mapDispatchToProps(dispatch) {
-  // 	return bindActionCreators(actionCreators, dispatch)
-  // }
 }
 
 export default Viewer;
