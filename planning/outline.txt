@@ -1,0 +1,15 @@
+
+The site is a collection of knowledge which I personally add to. It acts as a
+way to continue my learning in multiple areas and keep a record of that learning
+for the future.
+
+# Requirements
+  - Have individual pages with titles, summaries and content
+  - Be able to add pages with custom content
+  - Be able to edit pages
+  - Pages should record their creation date and last edited date
+  - Pages should be able to hold multiple forms of content
+    (text, image, code block, ect)
+  - Pages should be able to have multiple searchable categories to make finding
+    them easy.
+  - Pages should be searchable
