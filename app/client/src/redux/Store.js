@@ -1,13 +1,16 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
+import thunk from 'redux-thunk'
+import promise from 'redux-promise-middleware'
+
 
 const history = createHistory()
 const routerStuff = routerMiddleware(history)
 
 export { history }
 
-const middleware = applyMiddleware(routerStuff);
+const middleware = applyMiddleware(routerStuff, promise(), thunk);
 
 const placeHolderReducer = function(state=[], action){
   switch(action.type){
@@ -25,4 +28,4 @@ const store = createStore(reducers, {
   }
 );
 
-export default store
+export default store;

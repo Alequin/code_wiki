@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+const actionCreators = {};
 
 class Index extends Component {
 
@@ -9,6 +13,14 @@ class Index extends Component {
         <h1>App</h1>
       </div>
     )
+  }
+
+  mapStateToProps(state, router) {
+	   return Object.assign({}, state)
+  }
+
+  mapDispatchToProps(dispatch) {
+  	return bindActionCreators(actionCreators, dispatch)
   }
 }
 
