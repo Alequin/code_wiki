@@ -1,5 +1,5 @@
 
-use pages;
+use wiki;
 db.dropDatabase();
 
 db.pages.insert(
