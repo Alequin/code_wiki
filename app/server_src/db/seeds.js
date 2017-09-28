@@ -1,3 +1,4 @@
+
 use pages;
 db.dropDatabase();
 
@@ -11,6 +12,7 @@ db.pages.insert(
           title: "content title example 1",
           type: "text",
           value: "example text value 1",
+          position: 1,
         },
       ],
     }
