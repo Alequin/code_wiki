@@ -1,0 +1,40 @@
+const config = {
+	entry: "./src/Main.js",
+	output: {
+		path: `${__dirname}/build`,
+		filename: 'MainBundle.js'
+	},
+	devtool: 'source-map',
+	resolve: {
+		extensions: ['.js', '.jsx']
+	},
+	module: {
+		rules: [
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				query: {
+					presets: ['react', 'es2015']
+				}
+			},
+			{
+        test: /\.scss$/,
+        use: [
+	        {
+	          loader: "style-loader" // creates style nodes from JS strings
+	        },
+	        {
+	          loader: "css-loader" // translates CSS into CommonJS
+	        },
+	        {
+	          loader: "sass-loader" // compiles Sass to CSS
+	        }
+
+        ]
+      }
+		]
+	}
+}
+
+module.exports = config
