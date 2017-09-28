@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var path = require('path')
 
 app.get('/', function (req, res) {
@@ -7,6 +8,8 @@ app.get('/', function (req, res) {
 });
 
 app.use(express.static('client/build'));
+
+app.use("/page", require("./controllers/PagesController.js"));
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
