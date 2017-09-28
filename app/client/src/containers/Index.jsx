@@ -14,14 +14,14 @@ class Index extends Component {
       </div>
     )
   }
-
-  mapStateToProps(state, router) {
-	   return Object.assign({}, state)
-  }
-
-  mapDispatchToProps(dispatch) {
-  	return bindActionCreators(actionCreators, dispatch)
-  }
 }
 
-export default Index;
+function mapStateToProps(state, router) {
+   return Object.assign({}, state)
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
