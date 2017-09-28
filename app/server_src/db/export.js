@@ -1,16 +1,6 @@
 
 var fs = require('fs');
-var mongoClient = require("mongodb").MongoClient;
-
-function accessDB(command){
-  mongoClient.connect("mongodb://localhost:27017/wiki", function(err, db){
-    if(err){
-      console.log(err);
-    }else{
-      command(db);
-    }
-  });
-}
+const accessDB = require("./MongoConnection.js");
 
 accessDB((db) => {
   db.collection("pages").find().toArray(function(err, result) {
