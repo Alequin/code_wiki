@@ -4,28 +4,20 @@ import createHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise-middleware'
 
+import pageSummariesReducer from "./reducers/PageSummaries.js"
 
 const history = createHistory()
 const routerStuff = routerMiddleware(history)
 
 export { history }
 
-const middleware = applyMiddleware(routerStuff, promise(), thunk);
-
-const placeHolderReducer = function(state=[], action){
-  switch(action.type){
-    default: return state;
-  }
-}
+const middleware = applyMiddleware(promise(), routerStuff, thunk);
 
 const reducers = combineReducers({
-    placeHolder: placeHolderReducer
+    summaries: pageSummariesReducer
   }
 );
 
-const store = createStore(reducers, {
-
-  }
-);
+const store = createStore(reducers, middleware);
 
 export default store;
