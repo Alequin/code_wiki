@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from "./../redux/actions/PageSummariesActionCreator.js"
 
+import css from "./Index.scss"
+
 class Index extends Component {
 
   componentWillMount(){
@@ -15,7 +17,7 @@ class Index extends Component {
     console.log("summaries holds: ", this.props.summaries.data);
 
     return (
-      <div>
+      <div className="index">
         <h1>App</h1>
       </div>
     )

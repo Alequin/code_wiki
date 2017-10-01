@@ -17,10 +17,10 @@ const router = (
 	<Provider store={providerStore}>
 		<Router history={history}>
 			<div id="app-container">
-				<div>
+				<div id="nav-container">
 					<Route path="/" component={Nav} />
 				</div>
-				<div>
+				<div id="content-container">
 					<Route exact path="/" component={Index} />
 					<Route path="/view" component={Viewer} />
 				</div>

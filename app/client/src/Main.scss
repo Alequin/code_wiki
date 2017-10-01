@@ -1,9 +1,27 @@
 @import "colour-pallet.scss";
 
+$nav-width: 25%;
+
 body{
   background-color: $blue;
+  margin: 0;
 }
 
 #app-container{
   display: flex;
+
+  #nav-container{
+    background-color: $dark-blue;
+    position: fixed;
+    box-sizing: border-box;
+    height: 100%;
+    width: $nav-width;
+    padding: 10px;
+  }
+
+  #content-container{
+    padding: 10px;
+    margin-left: $nav-width;
+    flex: 7.5;
+  }
 }
