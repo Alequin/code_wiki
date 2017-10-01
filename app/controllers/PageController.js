@@ -5,10 +5,10 @@ const accessDB = require("./../server_src/db/MongoConnection.js");
 
 const onError = (error) => {console.log(error.stack)}
 
-pagesRouter.get('/', requestAuth, function(req, res, next){
+pagesRouter.get('/:title', requestAuth, function(req, res, next){
 
   let query = {}
-  console.log(req);
+  console.log(req.params);
 
   accessDB((db) => {
     db.collection("pages").find(query).toArray(function(err, result) {
