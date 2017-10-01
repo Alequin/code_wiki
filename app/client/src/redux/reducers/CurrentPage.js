@@ -7,8 +7,8 @@ function allPages(state = [], action) {
   	case 'CURRENT_PAGE_REJECTED':
   		return Object.assign({}, state, { fetching: true, error: action.payload })
   	case 'CURRENT_PAGE_FULFILLED':
-      return Object.assign({}, state, { fetching: true, fetched: true, members: action.payload.data })
-			
+      return Object.assign({}, state, { fetching: true, fetched: true, data: action.payload.data })
+
     default:
 			return state
 	}
