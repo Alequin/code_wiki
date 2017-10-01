@@ -24,7 +24,6 @@ class Viewer extends Component {
     for(let content of contents){
       if(content.type === "text"){
         contentAsJsx.push(<TextContent key={key++} title={content.title} content={content.value}/>);
-        contentAsJsx.push(<Divider key={key++} />);
       }
     }
 
@@ -36,9 +35,7 @@ class Viewer extends Component {
         </nav>
 
         <section className="viewer-content">
-          <Divider key={key++} />
           <TextContent title="Summary" content={page.summary} />
-          <Divider key={key++} />
           {contentAsJsx}
         </section>
 
