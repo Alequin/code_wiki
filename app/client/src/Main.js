@@ -11,10 +11,10 @@ import Viewer from './containers/Viewer.jsx'
 import { Router, Route } from 'react-router'
 
 import { Provider } from 'react-redux'
-import store, { history } from './redux/store'
+import providerStore, { history } from './redux/store'
 
 const router = (
-	<Provider store={store}>
+	<Provider store={providerStore}>
 		<Router history={history}>
 			<div>
 				<Route path="/" component={Nav} />
