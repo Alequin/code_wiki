@@ -20,12 +20,19 @@ body{
   }
 
   #content-container{
-    padding: 10px 30px;
     margin-left: $nav-width;
     flex: 7.5;
   }
 
-  .tile{
-    box-shadow: 0 2px 1px black;
+  h2{
+    font-size: 35px;
+  }
+
+  h3{
+    font-size: 37px;
+  }
+
+  p{
+    font-size: 19px;
   }
 }
