@@ -32,6 +32,12 @@ const config = {
 	        }
 
         ]
+      },
+			{
+        test: /\.(png|jpg|ttf)$/,
+        use: [
+         	{ loader: 'url-loader', options: { limit: 5000192 } }
+        ]
       }
 		]
 	}
