@@ -5,7 +5,7 @@ const accessDB = require("./../server_src/db/MongoConnection.js");
 
 const onError = (error) => {console.log(error.stack)}
 
-summaryRouter.get('/', function(req, res, next){
+summaryRouter.get('/', requestAuth, function(req, res, next){
   accessDB((db) => {
     db.collection("pages").find({}, {fields: {title: 1, summary: 1}}).toArray(function(err, result) {
       res.json(result);
