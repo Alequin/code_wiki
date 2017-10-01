@@ -1,7 +1,7 @@
 
 function Page(title, summary){
   this.title = title;
-  this.summary = summay;
+  this.summary = summary;
   this.content = [];
 }
 
