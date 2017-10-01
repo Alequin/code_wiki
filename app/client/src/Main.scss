@@ -1,27 +1,30 @@
 @import "colour-pallet.scss";
 
-$nav-width: 25%;
+$nav-width: 20%;
 
 body{
-  background-color: $blue;
   margin: 0;
+  background-image: url("./../build/images/bground-blue.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #app-container{
   display: flex;
 
   #nav-container{
-    background-color: $dark-blue;
+    background-color: $blue;
     position: fixed;
     box-sizing: border-box;
     height: 100%;
     width: $nav-width;
     padding: 10px;
+    box-shadow: 3px 0 20px black;
   }
 
   #content-container{
     margin-left: $nav-width;
-    flex: 7.5;
+    width: 80%;
   }
 
   h2{
