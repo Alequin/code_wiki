@@ -9,12 +9,10 @@ import css from './Viewer.scss'
 class Viewer extends Component {
 
   componentWillMount(){
-    this.props.getCurrentPageByTitle("bacon");
+    this.props.getCurrentPageByTitle("example page 1");
   }
 
   render() {
-
-    console.log(this.props.currentPage.data);
 
     return (
       <div>
