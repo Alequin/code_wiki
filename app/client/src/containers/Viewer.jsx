@@ -1,14 +1,21 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from "./../redux/actions/CurrentPageActionCreator.js"
 
 import css from './Viewer.scss'
 
-const actionCreators = {};
-
 class Viewer extends Component {
 
+  componentWillMount(){
+    this.props.getCurrentPageByTitle("bacon");
+  }
+
   render() {
+
+    console.log(this.props.currentPage.data);
+
     return (
       <div>
         <h1>Viewer</h1>
