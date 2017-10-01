@@ -7,7 +7,8 @@
     "start": "nodemon server.js",
     "pack": "cd client && webpack -w",
     "seed": "mongo < server_src/db/seeds.js",
-    "export": "node server_src/db/export.js"
+    "exportDB": "node server_src/db/export.js",
+    "importDB": "node server_src/db/import.js"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
