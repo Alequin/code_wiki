@@ -7,8 +7,9 @@ class TextContent extends Component {
   render() {
 
     return (
-      <div className="index">
-        <h1>{this.props.title}</h1>
+      <div className="text-content">
+        <h3>{this.props.title}</h3>
+        <p>{this.props.content}</p>
       </div>
     )
   }

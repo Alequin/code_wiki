@@ -3,13 +3,16 @@
 .viewer{
 
   nav{
-    text-align: center;
+    background-color: $dark-blue;
 
     h2{
-      display: inline-block;
-      background-color: $white;
-      padding: 15px 100px;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
     }
   }
 
+  .viewer-content{
+    padding: 15px 50px;
+  }
 }
