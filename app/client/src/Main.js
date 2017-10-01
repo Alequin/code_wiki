@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render } from 'react-dom'
 
-import css from './base-styles.scss'
+import css from './Main.scss'
 
 import Nav from './containers/Nav.jsx'
 import Index from './containers/Index.jsx'
@@ -16,10 +16,14 @@ import providerStore, { history } from './redux/store'
 const router = (
 	<Provider store={providerStore}>
 		<Router history={history}>
-			<div>
-				<Route path="/" component={Nav} />
-				<Route exact path="/" component={Index} />
-				<Route path="/view" component={Viewer} />
+			<div id="app-container">
+				<div>
+					<Route path="/" component={Nav} />
+				</div>
+				<div>
+					<Route exact path="/" component={Index} />
+					<Route path="/view" component={Viewer} />
+				</div>
 			</div>
 		</Router>
 	</Provider>
