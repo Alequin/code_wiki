@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 
 app.use(express.static('client/build'));
 
-app.use("/db/wiki", require("./controllers/PagesController.js"));
+app.use("/db/wiki", require("./controllers/WikiController"));
 
 app.get('/*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'client/build/index.html'))
