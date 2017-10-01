@@ -3,9 +3,10 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path')
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use(express.static('client/build'));
 
