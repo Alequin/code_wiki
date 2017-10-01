@@ -1,5 +1,15 @@
 @import "./../colour-pallet.scss";
 
-body{
-  background-color: $blue;
+.viewer{
+
+  nav{
+    text-align: center;
+
+    h2{
+      display: inline-block;
+      background-color: $white;
+      padding: 15px 100px;
+    }
+  }
+
 }

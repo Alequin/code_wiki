@@ -15,7 +15,8 @@ class Viewer extends Component {
   }
 
   render() {
-    const contents = this.props.currentPage.data.content;
+    const page = this.props.currentPage.data
+    const contents = page.content;
 
     let contentAsJsx = [];
     let key = 0;
@@ -26,8 +27,10 @@ class Viewer extends Component {
     }
 
     return (
-      <div>
-        {contentAsJsx}
+      <div className="viewer">
+        <nav>
+          <h2 className="tile">{page.title}</h2>
+        </nav>
       </div>
     )
   }

@@ -20,8 +20,12 @@ body{
   }
 
   #content-container{
-    padding: 10px;
+    padding: 10px 30px;
     margin-left: $nav-width;
     flex: 7.5;
+  }
+
+  .tile{
+    box-shadow: 0 2px 1px black;
   }
 }
