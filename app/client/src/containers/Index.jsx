@@ -8,6 +8,15 @@ import css from "./Index.scss"
 
 class Index extends Component {
 
+  constructor(){
+    super();
+
+    this.hoverTest = () => {
+      console.log("hover");
+    }
+    
+  }
+
   componentWillMount(){
     this.props.getPageSummaries();
   }
@@ -16,7 +25,7 @@ class Index extends Component {
 
     return (
       <div className="index">
-        <h1>App</h1>
+        <h1 onMouseEnter={this.hoverTest}>App</h1>
       </div>
     )
   }

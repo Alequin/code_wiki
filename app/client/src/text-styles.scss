@@ -1,8 +1,8 @@
 $txt-extra-large: 40px;
-$txt-large: 37px;
-$txt-medium: 35px;
-$txt-small: 20px;
-$txt-tiny: 15px;
+$txt-large: 35px;
+$txt-medium: 27px;
+$txt-small: 17px;
+$txt-tiny: 14px;
 
 h1{
   font-size: $txt-extra-large;
@@ -20,10 +20,10 @@ p{
   font-size: $txt-small;
 }
 
-label{
+input{
   font-size: $txt-small;
 }
 
-input{
-  font-size: $txt-small;
+button{
+  font-size: $txt-tiny;
 }

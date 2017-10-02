@@ -9,12 +9,10 @@ class Index extends Component {
     return (
       <div className="nav">
         <h1>Wiki</h1>
-        <label> Search By Page Title
-          <div className="search-container">
-            <input type="search"></input>
-            <button>Search</button>
-          </div>
-        </label>
+        <div className="search-container">
+          <input type="search" placeholder="Search By Title"></input>
+          <button>Search</button>
+        </div>
       </div>
     )
   }
