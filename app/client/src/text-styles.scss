@@ -1,0 +1,29 @@
+$txt-extra-large: 40px;
+$txt-large: 37px;
+$txt-medium: 35px;
+$txt-small: 20px;
+$txt-tiny: 15px;
+
+h1{
+  font-size: $txt-extra-large;
+}
+
+h2{
+  font-size: $txt-large;
+}
+
+h3{
+  font-size: $txt-medium;
+}
+
+p{
+  font-size: $txt-small;
+}
+
+label{
+  font-size: $txt-small;
+}
+
+input{
+  font-size: $txt-small;
+}
