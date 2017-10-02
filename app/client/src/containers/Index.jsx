@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from "./../redux/actions/PageSummariesActionCreator.js"
 
+import PageSummary from "./../components/PageSummary.jsx"
+
 import css from "./Index.scss"
 
 class Index extends Component {
@@ -23,9 +25,17 @@ class Index extends Component {
 
   render() {
 
+    let title = this.props.summaries.data[0].title ? this.props.summaries.data[0].title : "";
+    let summary = this.props.summaries.data[0].summary ? this.props.summaries.data[0].summary : "";
+
     return (
       <div className="index">
-        <h1 onMouseEnter={this.hoverTest}>App</h1>
+        <section className="summary-row">
+          <PageSummary title={title} summary={summary}/>
+          <PageSummary title={title} summary={summary}/>
+          <PageSummary title={title} summary={summary}/>
+          <PageSummary title={title} summary={summary}/>
+        </section>
       </div>
     )
   }
