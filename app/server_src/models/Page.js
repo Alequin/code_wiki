@@ -3,11 +3,12 @@ function Page(title, summary){
   this.title = title;
   this.summary = summary;
   this.content = [];
+  this.tags = []
 }
 
 Page.prototype.addContent = function(title, type, value){
   const position = this.content.length;
-  content.push(
+  this.content.push(
     {
       title: title,
       type: type,
@@ -17,16 +18,22 @@ Page.prototype.addContent = function(title, type, value){
   );
 }
 
-Page.prototype.AddTextContent = function(title, value){
+Page.prototype.addTextContent = function(title, value){
   this.addContent(title, "text", value);
 }
 
-Page.prototype.AddImageContent = function(title, value){
+Page.prototype.addImageContent = function(title, value){
   this.addContent(title, "img", value);
 }
 
-Page.prototype.AddCodeBlockContent = function(title, value){
+Page.prototype.addCodeBlockContent = function(title, value){
   this.addContent(title, "code", value);
 }
+
+Page.prototype.addTag = function(tag){
+  this.tags.push(tag);
+}
+
+
 
 module.exports = Page;

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "pack": "cd client && webpack -w",
-    "seed": "mongo < server_src/db/seeds.js",
+    "seed": "node server_src/db/seeds.js",
     "exportDB": "node server_src/db/export.js",
     "importDB": "node server_src/db/import.js"
   },
