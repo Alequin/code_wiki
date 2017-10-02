@@ -1,5 +1,5 @@
 
-process.traceDeprecation = true
+// process.traceDeprecation = true
 
 const config = {
 	entry: "./src/Main.js",
@@ -7,6 +7,12 @@ const config = {
 		path: `${__dirname}/build`,
 		filename: 'MainBundle.js'
 	},
+	stats: {
+    colors: true,
+    modules: true,
+    reasons: true,
+    errorDetails: true
+  },
 	devtool: 'source-map',
 	resolve: {
 		extensions: ['.js', '.jsx']

@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from "./../redux/actions/CurrentPageActionCreator.js"
 
-import TextContent from "./../Components/TextContent"
-import Divider from "./../Components/Divider"
+import TextContent from "./../components/TextContent.jsx"
 
 import css from './Viewer.scss'
 

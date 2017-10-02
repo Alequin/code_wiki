@@ -14,7 +14,7 @@ class Index extends Component {
     this.hoverTest = () => {
       console.log("hover");
     }
-    
+
   }
 
   componentWillMount(){
