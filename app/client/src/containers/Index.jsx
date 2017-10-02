@@ -27,17 +27,20 @@ class Index extends Component {
 
     let title = this.props.summaries.data[0].title ? this.props.summaries.data[0].title : "";
     let summary = this.props.summaries.data[0].summary ? this.props.summaries.data[0].summary : "";
+    let tags = this.props.summaries.data[0].tags ? this.props.summaries.data[0].tags : "";
 
     return (
       <div className="index">
         <section className="summary-column">
-          <PageSummary title={title} summary={summary}/>
+          <Link to="/view">
+            <PageSummary title={title} summary={summary} tags={tags}/>
+          </Link>
         </section>
         <section className="summary-column">
-          <PageSummary title={title} summary={summary}/>
+          <PageSummary title={title} summary={summary} tags={tags}/>
         </section>
         <section className="summary-column">
-          <PageSummary title={title} summary={summary}/>
+          <PageSummary title={title} summary={summary} tags={tags}/>
         </section>
       </div>
     )
