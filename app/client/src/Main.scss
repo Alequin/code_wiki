@@ -33,15 +33,9 @@ body{
     width: 100%;
   }
 
-  h2{
-    font-size: 35px;
-  }
-
-  h3{
-    font-size: 37px;
-  }
-
-  p{
-    font-size: 19px;
+  .tile{
+    box-shadow: 0 1px 2px black;
+    background-color: $white;
+    border-radius: 5px;
   }
 }

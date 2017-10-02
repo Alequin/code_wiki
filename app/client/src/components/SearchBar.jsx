@@ -7,7 +7,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-container">
+      <div className="search-container tile">
         <input type="search" placeholder={this.props.placeholder}></input>
         <button onClick={this.props.onSearch} >{this.props.buttonText}</button>
       </div>
