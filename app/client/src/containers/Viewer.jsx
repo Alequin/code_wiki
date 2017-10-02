@@ -11,12 +11,15 @@ import css from './Viewer.scss'
 class Viewer extends Component {
 
   componentWillMount(){
+    console.log("request page");
     this.props.getCurrentPageByTitle(this.props.summaries.selectedPage);
   }
 
   render() {
     const page = this.props.currentPage.data
     const contents = page.content;
+
+    console.log("state: ", page.content);
 
     let contentAsJsx = [];
     let key = 0;

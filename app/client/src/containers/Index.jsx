@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from "./../redux/actions/PageSummariesActionCreator.js"
@@ -12,14 +11,11 @@ class Index extends Component {
 
   constructor(){
     super();
-
-    this.onClickPageSummary.bind(this);
+    this.onClickPageSummary = this.onClickPageSummary.bind(this);
   }
 
   onClickPageSummary(title){
-    return () => {
-      this.props.setSelectedPage(title);
-    };
+    this.props.setSelectedPage(title);
   }
 
   componentWillMount(){
@@ -35,15 +31,13 @@ class Index extends Component {
     return (
       <div className="index">
         <section className="summary-column">
-          <Link to="/view" onClick={this.onClickPageSummary(title)}>
-            <PageSummary title={title} summary={summary} tags={tags}/>
-          </Link>
+          <PageSummary route="/view" onClickSummary={this.onClickPageSummary} title={title} summary={summary} tags={tags}/>
         </section>
         <section className="summary-column">
-          <PageSummary title={title} summary={summary} tags={tags}/>
+          <PageSummary route="/view" title={title} summary={summary} tags={tags}/>
         </section>
         <section className="summary-column">
-          <PageSummary title={title} summary={summary} tags={tags}/>
+          <PageSummary route="/view" title={title} summary={summary} tags={tags}/>
         </section>
       </div>
     )
