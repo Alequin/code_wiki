@@ -7,7 +7,7 @@ const onError = (error) => {console.log(error.stack)}
 
 summaryRouter.get('/', requestAuth, function(req, res, next){
   accessDB((db) => {
-    db.collection("pages").find({}, {fields: {title: 1, summary: 1}}).toArray(function(err, result) {
+    db.collection("pages").find({}, {fields: {title: 1, summary: 1, tags: 1}}).toArray(function(err, result) {
       res.json(result);
       db.close();
     });

@@ -1,6 +1,6 @@
 
 const defaultSummary = {
-	data: [{title: "", summary: ""}],
+	data: [{title: "", summary: "", tags: []}],
 	selectedPage: "",
 	fetching: false,
 	fetched: false

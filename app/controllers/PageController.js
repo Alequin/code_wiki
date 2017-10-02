@@ -8,7 +8,6 @@ const onError = (error) => {console.log(error.stack)}
 pagesRouter.get('/title/:title', requestAuth, function(req, res, next){
 
   let query = req.params;
-  console.log(query);
 
   accessDB((db) => {
     db.collection("pages").find(query).toArray(function(err, result) {
