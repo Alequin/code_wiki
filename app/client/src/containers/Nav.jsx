@@ -16,7 +16,7 @@ class Index extends Component {
           <SearchBar placeholder="Search By Title" buttonText="Search" />
         </section>
         <section className="nav-section">
-          <TagFilters />
+          <TagFilters tags={["SQL", "Java", "Ruby", "Bacon"]}/>
         </section>
       </div>
     )
