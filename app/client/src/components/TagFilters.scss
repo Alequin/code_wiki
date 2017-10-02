@@ -1,9 +1,11 @@
 
 .tag-filters{
   display: flex;
-  height: 100px;
+  height: 100%;
   width: 100%;
   background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
 
   .column{
     flex: 5;
@@ -21,6 +23,13 @@
 
   .tag-element-container{
     display: flex;
-    justify-content: space-between;
+
+    label{
+      flex: 8.5;
+    }
+
+    input{
+      flex: 1.5;
+    }
   }
 }
