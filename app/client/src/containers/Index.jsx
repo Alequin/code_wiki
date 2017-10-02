@@ -12,13 +12,14 @@ class Index extends Component {
 
   constructor(){
     super();
+
+    this.onClickPageSummary.bind(this);
   }
 
   onClickPageSummary(title){
-    return (title) => {
-      this.props.setCurrentPageTitle(title);
-      console.log("out");
-    }
+    return () => {
+      this.props.setSelectedPage(title);
+    };
   }
 
   componentWillMount(){
@@ -27,9 +28,9 @@ class Index extends Component {
 
   render() {
 
-    let title = this.props.summaries.data[0].title ? this.props.summaries.data[0].title : "";
-    let summary = this.props.summaries.data[0].summary ? this.props.summaries.data[0].summary : "";
-    let tags = this.props.summaries.data[0].tags ? this.props.summaries.data[0].tags : "";
+    let title = this.props.data[0].title ? this.props.data[0].title : "";
+    let summary = this.props.data[0].summary ? this.props.data[0].summary : "";
+    let tags = this.props.data[0].tags ? this.props.data[0].tags : "";
 
     return (
       <div className="index">
@@ -50,7 +51,7 @@ class Index extends Component {
 }
 
 function mapStateToProps(state, router) {
-   return Object.assign({}, state)
+   return Object.assign({}, state.summaries)
 }
 
 function mapDispatchToProps(dispatch) {

@@ -6,3 +6,10 @@ export function getPageSummaries() {
 		payload: axios.get('http://localhost:3000/db/wiki/summary')
 	}
 }
+
+export function setSelectedPage(title) {
+	return {
+		type: 'SELECT_PAGE',
+		payload: title
+	}
+}

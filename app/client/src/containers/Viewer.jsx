@@ -10,6 +10,10 @@ import css from './Viewer.scss'
 
 class Viewer extends Component {
 
+  componentWillMount(){
+    this.props.getCurrentPageByTitle(this.props.summaries.selectedPage);
+  }
+
   render() {
     const page = this.props.currentPage.data
     const contents = page.content;

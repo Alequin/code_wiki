@@ -1,12 +1,16 @@
 
 const defaultSummary = {
 	data: [{title: "", summary: ""}],
+	selectedPage: "",
 	fetching: false,
 	fetched: false
 }
 
 function allPages(state = defaultSummary, action) {
 	switch(action.type) {
+
+		case 'SELECT_PAGE':
+			return Object.assign({}, state, { selectedPage: action.payload })
 
     case 'PAGES_SUMMARIES_PENDING':
   		return Object.assign({}, state, { fetching: true })
