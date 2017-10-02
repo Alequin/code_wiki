@@ -11,7 +11,7 @@ class Index extends Component {
     return (
       <div className="nav">
         <h1>Wiki</h1>
-        <SearchBar placeholder="Search By Title" buttonText="Search"/>
+        <SearchBar placeholder="Search By Title" buttonText="Search" />
       </div>
     )
   }

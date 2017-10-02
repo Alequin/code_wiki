@@ -9,7 +9,7 @@ class SearchBar extends Component {
     return (
       <div className="search-container">
         <input type="search" placeholder={this.props.placeholder}></input>
-        <button>{this.props.buttonText}</button>
+        <button onClick={this.props.onSearch} >{this.props.buttonText}</button>
       </div>
     )
   }
