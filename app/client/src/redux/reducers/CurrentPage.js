@@ -10,6 +10,10 @@ function allPages(state = defaultPage, action) {
 	if(!state) state == defaultPage;
 	switch(action.type) {
 
+		case 'CURRENT_PAGE_TITLE':
+			let newState = Object.assign({}, state);
+			return newState.data.title = action.payload;
+
     case 'CURRENT_PAGE_PENDING':
   		return Object.assign({}, state, { fetching: true })
   	case 'CURRENT_PAGE_REJECTED':

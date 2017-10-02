@@ -12,11 +12,13 @@ class Index extends Component {
 
   constructor(){
     super();
+  }
 
-    this.hoverTest = () => {
-      console.log("hover");
+  onClickPageSummary(title){
+    return (title) => {
+      this.props.setCurrentPageTitle(title);
+      console.log("out");
     }
-
   }
 
   componentWillMount(){
@@ -32,7 +34,7 @@ class Index extends Component {
     return (
       <div className="index">
         <section className="summary-column">
-          <Link to="/view">
+          <Link to="/view" onClick={this.onClickPageSummary(title)}>
             <PageSummary title={title} summary={summary} tags={tags}/>
           </Link>
         </section>
