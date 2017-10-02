@@ -14,8 +14,6 @@ class Index extends Component {
 
   render() {
 
-    console.log("summaries holds: ", this.props.summaries.data);
-
     return (
       <div className="index">
         <h1>App</h1>
