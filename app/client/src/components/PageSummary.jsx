@@ -8,9 +8,9 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="page-summary">
-        <section className="title">{this.props.title}</section>
-        <section className="summary">{this.props.summary}</section>
-        <section className="tags">{this.props.summary}</section>
+        <section className="title"><h4>{this.props.title}</h4></section>
+        <section className="summary"><p>{this.props.summary}</p></section>
+        <section className="tags"><p>{this.props.tags}</p></section>
       </div>
     )
   }

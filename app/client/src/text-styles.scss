@@ -1,6 +1,7 @@
 $txt-extra-large: 40px;
 $txt-large: 35px;
 $txt-medium: 27px;
+$txt-mid-small: 22px;
 $txt-small: 17px;
 $txt-tiny: 14px;
 
@@ -14,6 +15,10 @@ h2{
 
 h3{
   font-size: $txt-medium;
+}
+
+h4{
+  font-size: $txt-mid-small;
 }
 
 p{
