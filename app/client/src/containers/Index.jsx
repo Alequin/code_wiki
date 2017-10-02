@@ -30,10 +30,13 @@ class Index extends Component {
 
     return (
       <div className="index">
-        <section className="summary-row">
+        <section className="summary-column">
           <PageSummary title={title} summary={summary}/>
+        </section>
+        <section className="summary-column">
           <PageSummary title={title} summary={summary}/>
-          <PageSummary title={title} summary={summary}/>
+        </section>
+        <section className="summary-column">
           <PageSummary title={title} summary={summary}/>
         </section>
       </div>
