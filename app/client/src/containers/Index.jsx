@@ -24,21 +24,26 @@ class Index extends Component {
 
   render() {
 
-    let title = this.props.data[0].title ? this.props.data[0].title : "";
-    let summary = this.props.data[0].summary ? this.props.data[0].summary : "";
-    let tags = this.props.data[0].tags ? this.props.data[0].tags : "";
+    const summaries =  this.props.data;
+    const columnCount = 3;
+    const columns = [];
+
+    for(let j=0; j<columnCount; j++){
+      const column = [];
+      for(let k=j; k<summaries.length; k+=columnCount){
+        column.push(
+          <PageSummary
+            key={k} route="/view" onClickSummary={this.onClickPageSummary}
+            title={summaries[k].title} summary={summaries[k].summary} tags={summaries[k].tags}
+          />
+        );
+      }
+      columns.push(<section className="summary-column" key={j}>{column}</section>);
+    }
 
     return (
       <div className="index">
-        <section className="summary-column">
-          <PageSummary route="/view" onClickSummary={this.onClickPageSummary} title={title} summary={summary} tags={tags}/>
-        </section>
-        <section className="summary-column">
-          <PageSummary route="/view" title={title} summary={summary} tags={tags}/>
-        </section>
-        <section className="summary-column">
-          <PageSummary route="/view" title={title} summary={summary} tags={tags}/>
-        </section>
+        {columns}
       </div>
     )
   }
