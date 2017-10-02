@@ -1,0 +1,20 @@
+
+.nav{
+  text-align: center;
+
+  h1{
+    text-align: center;
+  }
+
+  .search-container{
+    display: flex;
+
+    input{
+      flex: 7.5;
+    }
+
+    button{
+      flex: 2.5;
+    }
+  }
+}
