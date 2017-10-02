@@ -1,4 +1,11 @@
-function allPages(state = [], action) {
+
+const defaultSummary = {
+	data: [{title: "", summary: ""}],
+	fetching: false,
+	fetched: false
+}
+
+function allPages(state = defaultSummary, action) {
 	switch(action.type) {
 
     case 'PAGES_SUMMARIES_PENDING':
