@@ -10,6 +10,7 @@ class SearchBar extends Component {
       <div className="page-summary">
         <section className="title">{this.props.title}</section>
         <section className="summary">{this.props.summary}</section>
+        <section className="tags">{this.props.summary}</section>
       </div>
     )
   }
