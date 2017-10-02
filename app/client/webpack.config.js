@@ -1,3 +1,6 @@
+
+process.traceDeprecation = true
+
 const config = {
 	entry: "./src/Main.js",
 	output: {

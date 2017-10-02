@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 
-import SearchBar from "./../Components/SearchBar.jsx"
-import TagFilters from "./../Components/TagFilters.jsx"
+import SearchBar from "./../Components/SearchBar"
+import TagFilters from "./../Components/TagFilters"
 
 import css from "./Nav.scss"
 
