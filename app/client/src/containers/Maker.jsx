@@ -28,7 +28,7 @@ class Maker extends Component {
   }
 
   addTextContent(){
-    let page = Page.newPageFromHash(this.props);
+    this.props.addTextContent();
   }
 
   editContentTitle(position, value){

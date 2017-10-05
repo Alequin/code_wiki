@@ -13,6 +13,12 @@ function maker(state = defaultPage, action) {
 		case "EDIT_SUMMARY":
       state.summary = action.payload;
       break;
+
+		case "ADD_TEXT_CONTENT":
+	    const page = Page.newPageFromHash(state);
+	    page.addTextContent("", "");
+			state = page;
+      break;
 	}
 
 	return state;

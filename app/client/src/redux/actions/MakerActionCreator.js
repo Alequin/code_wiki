@@ -12,3 +12,9 @@ export function editPageSummary(content){
 		payload: content
 	}
 }
+
+export function addTextContent(){
+	return {
+		type: 'ADD_TEXT_CONTENT'
+	}
+}
