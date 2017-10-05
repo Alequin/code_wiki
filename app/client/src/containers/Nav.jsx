@@ -12,10 +12,13 @@ class Index extends Component {
     return (
       <div className="nav">
         <h1>Wiki</h1>
-        <section className="nav-section" >
+        <section>
+          <button className="tile">Add New Page</button>
+        </section>
+        <section>
           <SearchBar placeholder="Search By Title" buttonText="Search" />
         </section>
-        <section className="nav-section tag-section">
+        <section className="tag-section">
           <TagFilters tags={["SQL", "Java", "Ruby", "Bacon"]}/>
         </section>
       </div>
