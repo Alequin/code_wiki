@@ -6,6 +6,7 @@ import promise from 'redux-promise-middleware'
 
 import pageSummariesReducer from "./reducers/PageSummaries.js"
 import currentPageReducer from "./reducers/CurrentPage.js"
+import makerPageReducer from "./reducers/Maker.js"
 
 import Page from "./../../../server_src/models/Page.js"
 
@@ -18,7 +19,8 @@ const middleware = applyMiddleware(promise(), routerStuff, thunk);
 
 const reducers = combineReducers({
     summaries: pageSummariesReducer,
-    currentPage: currentPageReducer
+    currentPage: currentPageReducer,
+    maker: makerPageReducer
   }
 );
 
