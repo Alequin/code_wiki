@@ -29,6 +29,7 @@ class Maker extends Component {
 
   addTextContent(){
     this.props.addTextContent();
+    this.forceUpdate()
   }
 
   editContentTitle(position, value){
@@ -37,6 +38,26 @@ class Maker extends Component {
 
   editContentBody(position, value){
 
+  }
+
+  buildContentSections(){
+    const contentElements = [];
+    for(const content of this.props.content){
+      let contentElement = null;
+      switch(content.type){
+
+        case "text":
+          contentElement = <TextContentInput
+            title={content.title}
+            position={content.position}
+            content={content.value} />
+          break;
+
+      }
+
+      contentElements.push(contentElement);
+    }
+    return contentElements;
   }
 
   render() {
@@ -49,13 +70,11 @@ class Maker extends Component {
 
         <section className="maker-content">
           <SummaryContentInput content="Enter a short summary of the page" onTextChange={this.editSummary}/>
-          {/* <TextContentInput title="Content Title" position={-1} content="Enter a short summary of the page" /> */}
+          {this.buildContentSections()}
           <section className="maker-buttons">
             <button className="tile" onClick={this.addTextContent}>Add Text Section</button>
           </section>
         </section>
-
-
 
       </div>
     )
