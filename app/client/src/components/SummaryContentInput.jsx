@@ -10,10 +10,10 @@ class TextContentInput extends Component {
 
   render() {
     return (
-      <div className="summary-text-content">
+      <div className="content-container">
         <h3>Summary</h3>
         <textarea className="tile" type="textarea" placeholder={this.props.content} onKeyUp={this.props.onTextChange}/>
-        <section className="buttons">
+        <section className="content-buttons">
           <button className="tile">Alter Width</button>
         </section>
       </div>

@@ -38,8 +38,13 @@ class Maker extends Component {
 
         <section className="maker-content">
           <SummaryContentInput content="Enter a short summary of the page" onTextChange={this.editSummary}/>
-          <TextContentInput title="Summary Title" position={-1} content="Enter a short summary of the page" />
+          {/* <TextContentInput title="Content Title" position={-1} content="Enter a short summary of the page" /> */}
+          <section className="maker-buttons">
+            <button className="tile">Add Text Section</button>
+          </section>
         </section>
+
+
 
       </div>
     )

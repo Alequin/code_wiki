@@ -10,10 +10,10 @@ class TextContentInput extends Component {
 
   render() {
     return (
-      <div className="input-text-content">
+      <div className="content-container">
         <input className="tile" type="text" placeholder={this.props.title}/>
         <textarea className="tile" type="textarea" placeholder={this.props.content}/>
-        <section className="buttons">
+        <section className="content-buttons">
           <button className="tile">Alter Width</button>
         </section>
       </div>
