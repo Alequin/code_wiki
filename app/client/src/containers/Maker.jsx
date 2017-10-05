@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
-import PageSummary from "./../components/PageSummary.jsx"
+import TextContentInput from "./../components/TextContentInput.jsx"
 
 import css from "./Maker.scss"
 
@@ -23,11 +23,12 @@ class Maker extends Component {
       <div className="maker">
 
         <nav>
-          <input type="text" placeholder="Enter Page Title" size="1" onKeyUp={this.editTitle}/>
+          <input className="tile" type="text" placeholder="Enter Page Title" size="1" onKeyUp={this.editTitle}/>
         </nav>
 
         <section className="maker-content">
-
+          <TextContentInput title="Summary Title" position={-1} content="Enter a short summary of the page" />
+          <TextContentInput title="Summary Title" position={-1} content="Enter a short summary of the page" />
         </section>
 
       </div>
