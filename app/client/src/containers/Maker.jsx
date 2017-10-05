@@ -13,14 +13,15 @@ class Maker extends Component {
   constructor(){
     super()
     this.editTitle = this.editTitle.bind(this);
+    this.editSummary = this.editSummary.bind(this);
   }
 
   editTitle(event){
     this.props.editPageTitle(event.target.value);
   }
 
-  editContentTitle(position, value){
-    if(position === -1) return null;
+  editSummary(event){
+    this.props.editPageSummary(event.target.value);
   }
 
   editContentBody(position, value){
@@ -36,7 +37,7 @@ class Maker extends Component {
         </nav>
 
         <section className="maker-content">
-          <SummaryContentInput content="Enter a short summary of the page" />
+          <SummaryContentInput content="Enter a short summary of the page" onTextChange={this.editSummary}/>
           <TextContentInput title="Summary Title" position={-1} content="Enter a short summary of the page" />
         </section>
 

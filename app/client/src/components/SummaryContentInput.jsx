@@ -12,7 +12,7 @@ class TextContentInput extends Component {
     return (
       <div className="summary-text-content">
         <h3>Summary</h3>
-        <textarea className="tile" type="textarea" placeholder={this.props.content}/>
+        <textarea className="tile" type="textarea" placeholder={this.props.content} onKeyUp={this.props.onTextChange}/>
         <section className="buttons">
           <button className="tile">Alter Width</button>
         </section>
