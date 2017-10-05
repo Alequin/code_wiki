@@ -1,0 +1,17 @@
+@import "./../text-styles.scss";
+
+.input-text-content{
+  padding-left: 10px 0;
+  margin-bottom: 10px;
+
+  input{
+    font-size: $txt-medium;
+    margin-bottom: 10px;
+  }
+
+  textarea{
+    width: 40%;
+    font-size: $txt-mid-small;
+    resize: none;
+  }
+}
