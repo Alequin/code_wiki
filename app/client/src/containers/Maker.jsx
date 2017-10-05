@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
+import SummaryContentInput from "./../components/SummaryContentInput.jsx"
 import TextContentInput from "./../components/TextContentInput.jsx"
 
 import css from "./Maker.scss"
@@ -18,6 +19,14 @@ class Maker extends Component {
     this.props.editPageTitle(event.target.value);
   }
 
+  editContentTitle(position, value){
+    if(position === -1) return null;
+  }
+
+  editContentBody(position, value){
+    if(position === -1) return null;
+  }
+
   render() {
     return (
       <div className="maker">
@@ -27,7 +36,7 @@ class Maker extends Component {
         </nav>
 
         <section className="maker-content">
-          <TextContentInput title="Summary Title" position={-1} content="Enter a short summary of the page" />
+          <SummaryContentInput content="Enter a short summary of the page" />
           <TextContentInput title="Summary Title" position={-1} content="Enter a short summary of the page" />
         </section>
 

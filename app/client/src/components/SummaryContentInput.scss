@@ -1,0 +1,23 @@
+@import "./../text-styles.scss";
+$margin-divider: 10px;
+
+.summary-text-content{
+  padding-left: 10px 0;
+  margin-bottom: 20px;
+
+  h3{
+    margin: 0;
+    margin-bottom: $margin-divider
+  }
+
+  textarea{
+    display: block;
+    width: 40%;
+    font-size: $txt-mid-small;
+    resize: none;
+  }
+
+  .buttons{
+    margin-top: $margin-divider;
+  }
+}
