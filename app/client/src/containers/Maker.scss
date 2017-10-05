@@ -1,0 +1,21 @@
+@import "./../text-styles.scss";
+
+.maker{
+
+  nav{
+    text-align: center;
+    padding: 30px;
+
+    input{
+      display: inline-block;
+      width: 30%;
+      font-size: $txt-extra-large;
+      text-align: center;
+    }
+
+  }
+
+  .maker-content{
+    padding: 15px 50px;
+  }
+}

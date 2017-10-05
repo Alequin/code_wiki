@@ -13,7 +13,9 @@ class Index extends Component {
       <div className="nav">
         <h1>Wiki</h1>
         <section>
-          <button className="tile">Add New Page</button>
+          <Link to="maker">
+            <button className="tile">Add New Page</button>
+          </Link>
         </section>
         <section>
           <SearchBar placeholder="Search By Title" buttonText="Search" />
