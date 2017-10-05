@@ -6,6 +6,13 @@ function Page(title, summary){
   this.tags = []
 }
 
+Page.newPageFromHash = function(values){
+  const page = new Page(values.title, values.summary);
+  page.content = values.content;
+  page.tags = values.tags
+  return page;
+}
+
 Page.prototype.addContent = function(title, type, value){
   const position = this.content.length;
   this.content.push(

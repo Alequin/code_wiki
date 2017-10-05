@@ -6,6 +6,8 @@ import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 import SummaryContentInput from "./../components/SummaryContentInput.jsx"
 import TextContentInput from "./../components/TextContentInput.jsx"
 
+import Page from "./../../../server_src/models/Page.js"
+
 import css from "./Maker.scss"
 
 class Maker extends Component {
@@ -14,6 +16,7 @@ class Maker extends Component {
     super()
     this.editTitle = this.editTitle.bind(this);
     this.editSummary = this.editSummary.bind(this);
+    this.addTextContent = this.addTextContent.bind(this);
   }
 
   editTitle(event){
@@ -24,8 +27,16 @@ class Maker extends Component {
     this.props.editPageSummary(event.target.value);
   }
 
+  addTextContent(){
+    let page = Page.newPageFromHash(this.props);
+  }
+
+  editContentTitle(position, value){
+
+  }
+
   editContentBody(position, value){
-    if(position === -1) return null;
+
   }
 
   render() {
@@ -40,7 +51,7 @@ class Maker extends Component {
           <SummaryContentInput content="Enter a short summary of the page" onTextChange={this.editSummary}/>
           {/* <TextContentInput title="Content Title" position={-1} content="Enter a short summary of the page" /> */}
           <section className="maker-buttons">
-            <button className="tile">Add Text Section</button>
+            <button className="tile" onClick={this.addTextContent}>Add Text Section</button>
           </section>
         </section>
 
