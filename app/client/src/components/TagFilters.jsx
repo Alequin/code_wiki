@@ -28,13 +28,16 @@ class TagFilters extends Component {
     }
 
     return (
-      <div className="tag-filters tile">
-        <div className="column">
-          <ul>{leftColumnContent}</ul>
-        </div>
-        <div className="column">
-          <ul>{rightColumnContent}</ul>
-        </div>
+      <div className="tag-filters_container tile">
+        <h4>Tag Filters</h4>
+        <section className="tag-filters">
+          <div className="column">
+            <ul>{leftColumnContent}</ul>
+          </div>
+          <div className="column">
+            <ul>{rightColumnContent}</ul>
+          </div>
+        </section>
       </div>
     )
   }
