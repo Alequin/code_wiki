@@ -6,11 +6,21 @@ import * as actionCreators from "./../../redux/actions/CurrentPageActionCreator.
 import css from "./ViewerNav.scss"
 
 class ViewerNav extends Component {
+
+  constructor(props){
+    super(props)
+    this.onClickDeletePage = this.onClickDeletePage.bind(this)
+  }
+
+  onClickDeletePage(){
+    this.props.deletePageByTitle(this.props.title)
+  }
+
   render() {
     return (
       <div className="viewer-nav">
         <Link to="/">
-          <button className="tile hover-tile">Delete Page</button>
+          <button className="tile hover-tile" onClick={this.onClickDeletePage}>Delete Page</button>
         </Link>
         <Link to="/">
           <button className="tile hover-tile">Return</button>
@@ -21,5 +31,5 @@ class ViewerNav extends Component {
 }
 
 export default connectState(ViewerNav, actionCreators, (state) => {
-  return state.maker.page;
+  return state.currentPage.data;
 });
