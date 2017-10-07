@@ -41,8 +41,9 @@ class Maker extends Component {
       switch(content.type){
 
         case "text":
-          contentElement = <TextContentInput
-            position={content.position} />
+          contentElement = (
+            <TextContentInput key={content.position} position={content.position} />  
+          )
           break;
 
       }
