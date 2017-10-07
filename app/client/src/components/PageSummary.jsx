@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import css from "./PageSummary.scss"
 
-class SearchBar extends Component {
+class PageSummary extends Component {
 
   constructor(){
     super();
@@ -15,7 +15,6 @@ class SearchBar extends Component {
   }
 
   render() {
-    console.log(this.props.route);
     return (
       <Link to={this.props.route} onClick={this.onClickPageSummary}>
         <div className="page-summary">
@@ -28,4 +27,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default PageSummary;

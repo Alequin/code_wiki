@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/CurrentPageActionCreator.js"
 
 import TextContent from "./../components/TextContent.jsx"
@@ -43,12 +42,6 @@ class Viewer extends Component {
   }
 }
 
-function mapStateToProps(state, router) {
-   return Object.assign({}, state)
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Viewer);
+export default connectState(Viewer, actionCreators, (state) => {
+  return state
+});

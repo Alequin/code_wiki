@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
 import css from "./SummaryContentInput.scss"
@@ -31,12 +30,6 @@ class SummaryContentInput extends Component {
   }
 }
 
-function mapStateToProps(state, router) {
-   return Object.assign({}, state.maker)
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SummaryContentInput);
+export default connectState(SummaryContentInput, actionCreators, (state) => {
+  return state.maker
+});

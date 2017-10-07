@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/PageSummariesActionCreator.js"
 
 import PageSummary from "./../components/PageSummary.jsx"
@@ -49,12 +48,6 @@ class Index extends Component {
   }
 }
 
-function mapStateToProps(state, router) {
-   return Object.assign({}, state.summaries)
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connectState(Index, actionCreators, (state) => {
+  return state.summaries
+});

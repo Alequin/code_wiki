@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
 import SummaryContentInput from "./../components/SummaryContentInput.jsx"
@@ -76,12 +75,6 @@ class Maker extends Component {
   }
 }
 
-function mapStateToProps(state, router) {
-   return Object.assign({}, state.maker)
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Maker);
+export default connectState(Maker, actionCreators, (state) => {
+  return state.maker
+});

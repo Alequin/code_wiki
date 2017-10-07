@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
 import css from "./TextContentInput.scss"
@@ -43,12 +42,6 @@ class TextContentInput extends Component {
   }
 }
 
-function mapStateToProps(state, router) {
-   return Object.assign({}, state.maker.content)
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TextContentInput);
+export default connectState(TextContentInput, actionCreators, (state) => {
+  return state.maker.content
+});
