@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
+import ContentInputButtons from './ContentInputButtons'
+
 import css from "./SummaryContentInput.scss"
 
 class SummaryContentInput extends Component {
@@ -51,9 +53,7 @@ class SummaryContentInput extends Component {
           onChange={this.onEditSummary} value={this.props.summary}
           style={this.state}
         />
-        <section className="content-buttons">
-          <button className="tile hover-tile" onClick={this.onClickAlterWidth}>Alter Width</button>
-        </section>
+        <ContentInputButtons onClickAlterWidth={this.onClickAlterWidth}/>
       </div>
     )
   }

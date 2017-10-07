@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
+import ContentInputButtons from './ContentInputButtons'
+
 import css from "./TextContentInput.scss"
 
 class TextContentInput extends Component {
@@ -11,6 +13,10 @@ class TextContentInput extends Component {
 
     this.onEditTitle = this.onEditTitle.bind(this)
     this.onEditContent = this.onEditContent.bind(this)
+    this.onClickAlterWidth = this.onClickAlterWidth.bind(this)
+    this.state = {
+      width: "40%"
+    }
   }
 
   onEditTitle(event){
@@ -23,6 +29,30 @@ class TextContentInput extends Component {
     this.forceUpdate()
   }
 
+  onClickAlterWidth(){
+    let width
+    switch(this.state.width){
+      case "20%":
+        width = "40%"
+        break;
+      case "40%":
+        width = "60%"
+        break;
+      case "60%":
+        width = "80%"
+        break;
+      case "80%":
+        width = "100%"
+        break;
+      case "100%":
+        width = "20%"
+        break;
+    }
+    this.setState({
+      width: width
+    })
+  }
+
   render() {
     return (
       <div className="content-container">
@@ -33,10 +63,9 @@ class TextContentInput extends Component {
         <textarea className="tile" type="textarea" placeholder="Content"
           onChange={this.onEditContent}
           value={this.props.content[this.props.position].value}
+          style={this.state}
         />
-        <section className="content-buttons">
-          <button className="tile hover-tile">Alter Width</button>
-        </section>
+        <ContentInputButtons onClickAlterWidth={this.onClickAlterWidth}/>
       </div>
     )
   }
