@@ -4,6 +4,8 @@ import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 
 import ContentInputButtons from './ContentInputButtons'
 
+import calcWidth from './../services/CalcWidth'
+
 import css from "./SummaryContentInput.scss"
 
 class SummaryContentInput extends Component {
@@ -22,26 +24,8 @@ class SummaryContentInput extends Component {
   }
 
   onClickAlterWidth(){
-    let width
-    switch(this.state.width){
-      case "20%":
-        width = "40%"
-        break;
-      case "40%":
-        width = "60%"
-        break;
-      case "60%":
-        width = "80%"
-        break;
-      case "80%":
-        width = "100%"
-        break;
-      case "100%":
-        width = "20%"
-        break;
-    }
     this.setState({
-      width: width
+      width: calcWidth(this.state.width)
     })
   }
 
