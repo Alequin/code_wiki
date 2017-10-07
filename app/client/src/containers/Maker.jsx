@@ -65,7 +65,9 @@ class Maker extends Component {
       <div className="maker">
 
         <nav>
-          <input className="tile" type="text" placeholder="Enter Page Title" size="1" onKeyUp={this.editTitle}/>
+          <input className="tile" type="text" placeholder="Enter Page Title"
+            size="1" onChange={this.editTitle} value={this.props.title}
+          />
         </nav>
 
         <section className="maker-content">
