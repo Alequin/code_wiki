@@ -22,7 +22,9 @@ class MakerNav extends Component {
     return (
       <div className="maker-nav">
         <section>
-          <button className="tile hover-tile" onClick={this.onClickSave}>Save</button>
+          <Link to="/">
+            <button className="tile hover-tile" onClick={this.onClickSave}>Save</button>
+          </Link>
           <Link to="/">
             <button className="tile hover-tile">Return</button>
           </Link>
