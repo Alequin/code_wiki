@@ -48,9 +48,7 @@ class Maker extends Component {
 
         case "text":
           contentElement = <TextContentInput
-            title={content.title}
-            position={content.position}
-            content={content.value} />
+            position={content.position} />
           break;
 
       }

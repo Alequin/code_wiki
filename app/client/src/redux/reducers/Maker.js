@@ -4,24 +4,34 @@ const defaultPage = new Page("", "");
 
 function maker(state = defaultPage, action) {
 	state = !state ? defaultPage : Object.assign({}, state);
+	const page = Page.newPageFromHash(state);
+	const payload = action.payload
+
 	switch(action.type) {
 
 		case "EDIT_TITLE":
-      state.title = action.payload;
+      page.title = payload;
       break;
 
 		case "EDIT_SUMMARY":
-      state.summary = action.payload;
+      page.summary = payload;
       break;
 
 		case "ADD_TEXT_CONTENT":
-	    const page = Page.newPageFromHash(state);
 	    page.addTextContent("", "");
 			state = page;
       break;
+
+		case "EDIT_TEXT_CONTENT_TITLE":
+			page.content[payload.position].title = payload.title
+			break;
+
+		case "EDIT_TEXT_CONTENT_VALUE":
+			page.content[payload.position].value = payload.value
+			break;
 	}
 
-	return state;
+	return page;
 }
 
 export default maker;
