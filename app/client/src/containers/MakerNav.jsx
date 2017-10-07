@@ -1,15 +1,28 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import connectState from './../services/ConnectState'
+import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
+
+import Page from "./../../../server_src/models/Page.js"
 
 import css from "./MakerNav.scss"
 
 class MakerNav extends Component {
 
+  constructor(props){
+    super(props)
+    this.onClickSave = this.onClickSave.bind(this)
+  }
+
+  onClickSave(){
+    console.log(Page.newPageFromHash(this.props));
+  }
+
   render() {
     return (
       <div className="maker-nav">
         <section>
-          <button className="tile hover-tile">Save</button>
+          <button className="tile hover-tile" onClick={this.onClickSave}>Save</button>
           <Link to="/">
             <button className="tile hover-tile">Return</button>
           </Link>
@@ -19,4 +32,6 @@ class MakerNav extends Component {
   }
 }
 
-export default MakerNav;
+export default connectState(MakerNav, actionCreators, (state) => {
+  return state.maker
+});
