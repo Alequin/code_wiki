@@ -26,14 +26,6 @@ class Maker extends Component {
     this.forceUpdate()
   }
 
-  editContentTitle(position, value){
-
-  }
-
-  editContentBody(position, value){
-
-  }
-
   buildContentSections(){
     const contentElements = [];
     for(const content of this.props.content){
@@ -42,7 +34,7 @@ class Maker extends Component {
 
         case "text":
           contentElement = (
-            <TextContentInput key={content.position} position={content.position} />  
+            <TextContentInput key={content.position} position={content.position} />
           )
           break;
 
