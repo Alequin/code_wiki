@@ -4,9 +4,9 @@ import { render } from 'react-dom'
 
 import css from './Main.scss'
 
-import Nav from './containers/Nav.jsx'
-import IndexNav from './containers/IndexNav.jsx'
-import MakerNav from './containers/MakerNav.jsx'
+import Nav from './containers/NavContainers/Nav.jsx'
+import IndexNav from './containers/NavContainers/IndexNav.jsx'
+import MakerNav from './containers/NavContainers/MakerNav.jsx'
 import Index from './containers/Index.jsx'
 import Viewer from './containers/Viewer.jsx'
 import Maker from './containers/Maker.jsx'
