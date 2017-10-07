@@ -1,4 +1,13 @@
 
+import axios from 'axios'
+
+export function postNewPage(page){
+	return {
+		type: 'NEW_PAGE',
+		payload: axios.post(`http://localhost:3000/db/wiki/page`, page)
+	}
+}
+
 export function editPageTitle(title){
 	return {
 		type: 'EDIT_TITLE',
