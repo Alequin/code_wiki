@@ -6,6 +6,7 @@ import css from './Main.scss'
 
 import Nav from './containers/Nav.jsx'
 import IndexNav from './containers/IndexNav.jsx'
+import MakerNav from './containers/MakerNav.jsx'
 import Index from './containers/Index.jsx'
 import Viewer from './containers/Viewer.jsx'
 import Maker from './containers/Maker.jsx'
@@ -22,6 +23,7 @@ const router = (
 				<div id="nav-container">
 					<Route path="/" component={Nav} />
 					<Route exact path="/" component={IndexNav} />
+					<Route exact path="/maker" component={MakerNav} />
 				</div>
 				<div id="content-container">
 					<Route exact path="/" component={Index} />

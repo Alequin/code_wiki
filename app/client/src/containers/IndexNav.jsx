@@ -13,7 +13,7 @@ class Index extends Component {
       <div className="index-nav">
         <section>
           <Link to="maker">
-            <button className="tile">Add New Page</button>
+            <button className="tile hover-tile">Add New Page</button>
           </Link>
         </section>
         <section>

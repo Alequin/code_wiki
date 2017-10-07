@@ -66,7 +66,7 @@ class Maker extends Component {
           <SummaryContentInput content="Enter a short summary of the page" />
           {this.buildContentSections()}
           <section className="maker-buttons">
-            <button className="tile" onClick={this.addTextContent}>Add Text Section</button>
+            <button className="tile hover-tile" onClick={this.addTextContent}>Add Text Section</button>
           </section>
         </section>
 

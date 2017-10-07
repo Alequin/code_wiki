@@ -43,4 +43,9 @@ a{
     background-color: $white;
     border-radius: 5px;
   }
+  
+  .hover-tile:hover{
+    transition: 0.2s ease;
+    box-shadow: 2px 5px 10px black;
+  }
 }

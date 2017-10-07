@@ -23,7 +23,7 @@ class SummaryContentInput extends Component {
           onChange={this.onEditSummary} value={this.props.summary}
         />
         <section className="content-buttons">
-          <button className="tile">Alter Width</button>
+          <button className="tile hover-tile">Alter Width</button>
         </section>
       </div>
     )

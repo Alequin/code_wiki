@@ -35,7 +35,7 @@ class TextContentInput extends Component {
           value={this.props[this.props.position].value}
         />
         <section className="content-buttons">
-          <button className="tile">Alter Width</button>
+          <button className="tile hover-tile">Alter Width</button>
         </section>
       </div>
     )
