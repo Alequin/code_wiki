@@ -5,6 +5,7 @@ import { render } from 'react-dom'
 import css from './Main.scss'
 
 import Nav from './containers/Nav.jsx'
+import IndexNav from './containers/IndexNav.jsx'
 import Index from './containers/Index.jsx'
 import Viewer from './containers/Viewer.jsx'
 import Maker from './containers/Maker.jsx'
@@ -20,6 +21,7 @@ const router = (
 			<div id="app-container">
 				<div id="nav-container">
 					<Route path="/" component={Nav} />
+					<Route exact path="/" component={IndexNav} />
 				</div>
 				<div id="content-container">
 					<Route exact path="/" component={Index} />
