@@ -56,5 +56,5 @@ class TextContentInput extends Component {
 }
 
 export default connectState(TextContentInput, actionCreators, (state) => {
-  return state.maker
+  return state.maker.page
 });

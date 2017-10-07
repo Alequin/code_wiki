@@ -10,12 +10,12 @@ import css from "./MakerNav.scss"
 class MakerNav extends Component {
 
   constructor(props){
-    super(props)
-    this.onClickSave = this.onClickSave.bind(this)
+    super(props);
+    this.onClickSave = this.onClickSave.bind(this);
   }
 
   onClickSave(){
-    console.log(Page.newPageFromHash(this.props));
+    this.props.postNewPage(this.props);
   }
 
   render() {
@@ -33,5 +33,5 @@ class MakerNav extends Component {
 }
 
 export default connectState(MakerNav, actionCreators, (state) => {
-  return state.maker
+  return state.maker.page;
 });

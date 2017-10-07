@@ -44,5 +44,5 @@ class SummaryContentInput extends Component {
 }
 
 export default connectState(SummaryContentInput, actionCreators, (state) => {
-  return state.maker
+  return state.maker.page
 });

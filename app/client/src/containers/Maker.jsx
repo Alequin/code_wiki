@@ -69,5 +69,5 @@ class Maker extends Component {
 }
 
 export default connectState(Maker, actionCreators, (state) => {
-  return state.maker
+  return state.maker.page
 });
