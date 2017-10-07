@@ -36,4 +36,16 @@ pagesRouter.get('/title/:title', requestAuth, function(req, res, next){
   });
 });
 
+pagesRouter.delete('/title/:title', requestAuth, function(req, res, next){
+
+  let query = req.params;
+
+  accessDB((db) => {
+    db.collection("pages").remove(query, function(err, numberOfRemovedDocs) {
+      res.json(numberOfRemovedDocs);
+      db.close();
+    });
+  });
+});
+
 module.exports = pagesRouter;

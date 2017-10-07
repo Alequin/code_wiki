@@ -4,9 +4,11 @@ import { render } from 'react-dom'
 
 import css from './Main.scss'
 
-import Nav from './containers/Nav.jsx'
-import IndexNav from './containers/IndexNav.jsx'
-import MakerNav from './containers/MakerNav.jsx'
+import Nav from './containers/NavContainers/Nav.jsx'
+import IndexNav from './containers/NavContainers/IndexNav.jsx'
+import MakerNav from './containers/NavContainers/MakerNav.jsx'
+import ViewerNav from './containers/NavContainers/ViewerNav.jsx'
+
 import Index from './containers/Index.jsx'
 import Viewer from './containers/Viewer.jsx'
 import Maker from './containers/Maker.jsx'
@@ -24,6 +26,7 @@ const router = (
 					<Route path="/" component={Nav} />
 					<Route exact path="/" component={IndexNav} />
 					<Route exact path="/maker" component={MakerNav} />
+					<Route exact path="/view" component={ViewerNav} />
 				</div>
 				<div id="content-container">
 					<Route exact path="/" component={Index} />
