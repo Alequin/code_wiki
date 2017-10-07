@@ -15,7 +15,7 @@ class TagFilters extends Component {
       for(let index in tags){
         let tagElement = (
           <li className="tag-element-container" key={index}>
-            <label for={index}>{tags[index]}</label>
+            <label htmlFor={index}>{tags[index]}</label>
             <input id={index} type="checkbox" value={tags[index]}></input>
           </li>
         )
