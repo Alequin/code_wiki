@@ -44,7 +44,6 @@ class SummaryContentInput extends Component {
   }
 
   render() {
-    console.log(this.state.textAreaStyles);
     return (
       <div className="content-container">
         <h3>Summary</h3>
