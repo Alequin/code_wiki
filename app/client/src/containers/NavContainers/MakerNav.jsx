@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router';
 import { Link } from "react-router-dom"
 import connectState from './../../services/ConnectState'
 import * as actionCreators from "./../../redux/actions/MakerActionCreator.js"
@@ -12,19 +13,33 @@ class MakerNav extends Component {
   constructor(props){
     super(props);
     this.onClickSave = this.onClickSave.bind(this);
+    this.state = {
+      saveSuccess: false
+    }
   }
 
   onClickSave(){
-    this.props.postNewPage(this.props);
+    const page = Page.newPageFromHash(this.props)
+    if(page.isPageValid()){
+      this.props.postNewPage(this.props);
+      this.setState({
+        saveSuccess: true
+      });
+    }else{
+      console.log("Page is not valid");
+    }
   }
 
   render() {
+
+    if (this.state.saveSuccess) {
+      return <Redirect push to="/" />;
+    }
+
     return (
       <div className="maker-nav">
         <section>
-          <Link to="/">
-            <button className="tile hover-tile" onClick={this.onClickSave}>Save</button>
-          </Link>
+          <button className="tile hover-tile" onClick={this.onClickSave}>Save</button>
           <Link to="/">
             <button className="tile hover-tile">Return</button>
           </Link>

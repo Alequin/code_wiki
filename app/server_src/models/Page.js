@@ -41,6 +41,25 @@ Page.prototype.addTag = function(tag){
   this.tags.push(tag);
 }
 
+Page.prototype.isPageValid = function(){
+  if(!isStringValid(this.title) || !isStringValid(this.summary)){
+    return false;
+  }
 
+  const anyInvalidContent = this.content.some((item) => {
+    switch(item.type){
+      case "text":
+        return !isStringValid(item.title) || !isStringValid(item.value)
+    }
+  })
+
+  if(anyInvalidContent) return false;
+
+  return true;
+}
+
+function isStringValid(str){
+  return (str && str.length > 0);
+}
 
 module.exports = Page;
