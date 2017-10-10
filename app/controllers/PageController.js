@@ -30,7 +30,7 @@ pagesRouter.get('/title/:title', requestAuth, function(req, res, next){
 
   accessDB((db) => {
     db.collection("pages").find(query).toArray(function(err, result) {
-      res.json(result);
+      res.json(result[0]);
       db.close();
     });
   });

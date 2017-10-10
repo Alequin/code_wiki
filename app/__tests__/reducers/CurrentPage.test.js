@@ -21,4 +21,33 @@ describe('CurrentPage Reducer', () => {
 		defaultPage.fetching = true;
 		expect(result).toMatchObject(defaultPage);
 	})
+
+	it(`CURRENT_PAGE_REJECTED: should set fetching to false and add a property error
+		 	with error set to the payload given`, () => {
+		const errorPayload = {error: "returned object"}
+		const action = {
+			type: "CURRENT_PAGE_REJECTED",
+			payload: errorPayload
+		}
+
+		const result = currentPageReducer(defaultPage, action)
+		defaultPage.fetching = true
+		defaultPage.error = {error: "returned object"}
+		expect(result).toMatchObject(defaultPage)
+	})
+
+	it(`CURRENT_PAGE_FULFILLED: should set fetching and fetched to true and set
+			property page to payload.data`, () => {
+		const payload = {data: new Page("title", "summary")}
+		const action = {
+			type: "CURRENT_PAGE_FULFILLED",
+			payload: payload
+		}
+
+		const result = currentPageReducer(defaultPage, action)
+		defaultPage.fetching = true
+		defaultPage.fetched = true
+		defaultPage.page = payload.data
+		expect(result).toMatchObject(defaultPage)
+	})
 })
