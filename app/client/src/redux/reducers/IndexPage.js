@@ -6,7 +6,7 @@ const defaultSummary = {
 	fetched: false
 }
 
-function allPages(state = defaultSummary, action) {
+function indexPage(state = defaultSummary, action) {
 	switch(action.type) {
 
 		case 'SELECT_PAGE':
@@ -24,4 +24,4 @@ function allPages(state = defaultSummary, action) {
 	}
 }
 
-export default allPages;
+export default indexPage;
