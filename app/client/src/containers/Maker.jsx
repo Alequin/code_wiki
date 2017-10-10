@@ -5,7 +5,7 @@ import * as actionCreators from "./../redux/actions/MakerActionCreator.js"
 import SummaryContentInput from "./../components/SummaryContentInput.jsx"
 import TextContentInput from "./../components/TextContentInput.jsx"
 
-import Page from "./../../../server_src/models/Page.js"
+import Page from "./../../../models/Page.js"
 
 import css from "./Maker.scss"
 

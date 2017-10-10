@@ -1,4 +1,4 @@
-import Page from "./../../../../server_src/models/Page.js"
+import Page from "./../../../../models/Page.js"
 
 const defaultPage = {
 	page: new Page("", ""),

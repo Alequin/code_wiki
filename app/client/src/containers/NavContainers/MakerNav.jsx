@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import connectState from './../../services/ConnectState'
 import * as actionCreators from "./../../redux/actions/MakerActionCreator.js"
 
-import Page from "./../../../../server_src/models/Page.js"
+import Page from "./../../../../models/Page.js"
 
 import css from "./MakerNav.scss"
 

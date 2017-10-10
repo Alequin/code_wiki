@@ -8,7 +8,7 @@ import pageSummariesReducer from "./reducers/indexPage.js"
 import currentPageReducer from "./reducers/CurrentPage.js"
 import makerPageReducer from "./reducers/Maker.js"
 
-import Page from "./../../../server_src/models/Page.js"
+import Page from "./../../../models/Page.js"
 
 const history = createHistory()
 const routerStuff = routerMiddleware(history)
