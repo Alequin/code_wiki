@@ -10,6 +10,6 @@ export function getPageSummaries() {
 export function setSelectedPage(title) {
 	return {
 		type: 'SELECT_PAGE',
-		payload: title
+		pageTitle: title
 	}
 }

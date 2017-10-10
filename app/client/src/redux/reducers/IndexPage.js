@@ -3,14 +3,15 @@ const defaultSummary = {
 	data: [],
 	selectedPage: "",
 	fetching: false,
-	fetched: false
+	fetched: false,
+	error: null
 }
 
 function indexPage(state = defaultSummary, action) {
 	switch(action.type) {
 
 		case 'SELECT_PAGE':
-			return Object.assign({}, state, { selectedPage: action.payload })
+			return Object.assign({}, state, { selectedPage: action.pageTitle })
 
     case 'PAGES_SUMMARIES_PENDING':
   		return Object.assign({}, state, { fetching: true })
