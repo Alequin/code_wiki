@@ -1,7 +1,7 @@
 import Page from "./../../../../server_src/models/Page.js"
 
 const defaultPage = {
-	data: new Page("", ""),
+	page: new Page("", ""),
 	fetching: false,
 	fetched: false
 }
@@ -19,7 +19,7 @@ function allPages(state = defaultPage, action) {
   	case 'CURRENT_PAGE_REJECTED':
   		return Object.assign({}, state, { fetching: true, error: action.payload })
   	case 'CURRENT_PAGE_FULFILLED':
-      return Object.assign({}, state, { fetching: true, fetched: true, data: action.payload.data[0] })
+      return Object.assign({}, state, { fetching: true, fetched: true, page: action.payload.data[0] })
 
 		case 'DELETE_CURRENT_PAGE_PENDING':
   		return Object.assign({}, state, { fetching: true })
