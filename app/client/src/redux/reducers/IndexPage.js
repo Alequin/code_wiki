@@ -1,3 +1,4 @@
+import RequestState from "./RequestState"
 
 const defaultSummary = {
 	data: [],
@@ -8,21 +9,26 @@ const defaultSummary = {
 }
 
 function indexPage(state = defaultSummary, action) {
+	state = Object.assign({}, state)
 	switch(action.type) {
 
 		case 'SELECT_PAGE':
-			return Object.assign({}, state, { selectedPage: action.pageTitle })
+			state.selectedPage = action.pageTitle
+			break;
 
     case 'PAGES_SUMMARIES_PENDING':
-  		return Object.assign({}, state, { fetching: true })
+			state = RequestState.setStatePending(state)
+			break;
   	case 'PAGES_SUMMARIES_REJECTED':
-  		return Object.assign({}, state, { fetching: true, error: action.payload })
+			state = RequestState.setStateRejected(state, action.payload);
+			break;
   	case 'PAGES_SUMMARIES_FULFILLED':
-      return Object.assign({}, state, { fetching: true, fetched: true, data: action.payload.data })
+			state = RequestState.setStateFulfilled(state);
+			state.data = action.payload.data
+			break;
 
-    default:
-			return state
 	}
+	return state
 }
 
 export default indexPage;
