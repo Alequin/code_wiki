@@ -13,12 +13,13 @@ describe('CurrentPage Reducer', () => {
 		}
 	})
 
-	it('CURRENT_PAGE_PENDING: should set property fetching to true', () => {
+	it('CURRENT_PAGE_PENDING: should set property fetching to true and fetched to false', () => {
 		const action = {
 			type: "CURRENT_PAGE_PENDING"
 		}
 		const result = currentPageReducer(defaultPage, action);
 		defaultPage.fetching = true;
+		defaultPage.fetched = false;
 		expect(result).toMatchObject(defaultPage);
 	})
 
@@ -51,12 +52,13 @@ describe('CurrentPage Reducer', () => {
 		expect(result).toMatchObject(defaultPage)
 	})
 
-	it('DELETE_CURRENT_PAGE_PENDING: should set property fetching to true', () => {
+	it('DELETE_CURRENT_PAGE_PENDING: should set property fetching to true and fetched to false', () => {
 		const action = {
 			type: "DELETE_CURRENT_PAGE_PENDING"
 		}
 		const result = currentPageReducer(defaultPage, action);
 		defaultPage.fetching = true;
+		defaultPage.fetched = false;
 		expect(result).toMatchObject(defaultPage);
 	})
 

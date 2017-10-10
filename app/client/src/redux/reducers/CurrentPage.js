@@ -1,4 +1,5 @@
 import Page from "./../../../../models/Page.js"
+import RequestStateHandler from "./RequestStateHandler"
 
 const defaultPage = {
 	page: new Page("", ""),
@@ -11,15 +12,13 @@ function allPages(state = defaultPage, action) {
 	switch(action.type) {
 
     case 'CURRENT_PAGE_PENDING':
-			state.fetching = true;
+			state = RequestStateHandler.setStatePending(state);
 			break;
   	case 'CURRENT_PAGE_REJECTED':
-			state.fetching = true;
-			state.error = action.payload;
+			state = RequestStateHandler.setStateRejected(state, action.payload);
 			break;
   	case 'CURRENT_PAGE_FULFILLED':
-			state.fetching = true;
-			state.fetched = true;
+			state = RequestStateHandler.setStateFulfilled(state);
 			state.page = action.payload.data;
 			break;
 
