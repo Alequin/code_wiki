@@ -10,12 +10,13 @@ import css from './Viewer.scss'
 class Viewer extends Component {
 
   componentWillMount(){
-    this.props.getCurrentPageByTitle(this.props.summaries.selectedPage);
+    this.props.getCurrentPageByTitle(this.props.selectedPage);
   }
 
   render() {
-    const page = this.props.currentPage.data
+    const page = this.props.page
     const contents = page.content;
+    console.log(this.props);
 
     let contentAsJsx = [];
     let key = 0;
@@ -43,5 +44,5 @@ class Viewer extends Component {
 }
 
 export default connectState(Viewer, actionCreators, (state) => {
-  return state
+  return [state.currentPage, {selectedPage: state.indexPage.selectedPage}]
 });
