@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "test": "jest",
     "pack": "cd client && webpack -w",
     "seed": "node server_src/db/seeds.js",
     "exportDB": "node server_src/db/export.js",
@@ -12,9 +13,16 @@
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "jest-cli": "^21.2.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0",
     "webpack": "^2.2.0"
   },
   "dependencies": {
@@ -23,6 +31,8 @@
     "css-loader": "^0.28.7",
     "express": "^4.13.4",
     "file-loader": "^1.1.4",
+    "history": "^4.7.2",
+    "jest": "^21.2.1",
     "mongodb": "^2.2.31",
     "node-sass": "^4.5.3",
     "react": "^16.0.0",
