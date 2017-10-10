@@ -1,5 +1,5 @@
 import Page from "./../../../../models/Page.js"
-import RequestStateHandler from "./RequestStateHandler"
+import RequestState from "./RequestState"
 
 const defaultPage = {
 	page: new Page("", ""),
@@ -12,24 +12,24 @@ function allPages(state = defaultPage, action) {
 	switch(action.type) {
 
     case 'CURRENT_PAGE_PENDING':
-			state = RequestStateHandler.setStatePending(state);
+			state = RequestState.setStatePending(state);
 			break;
   	case 'CURRENT_PAGE_REJECTED':
-			state = RequestStateHandler.setStateRejected(state, action.payload);
+			state = RequestState.setStateRejected(state, action.payload);
 			break;
   	case 'CURRENT_PAGE_FULFILLED':
-			state = RequestStateHandler.setStateFulfilled(state);
+			state = RequestState.setStateFulfilled(state);
 			state.page = action.payload.data;
 			break;
 
 		case 'DELETE_CURRENT_PAGE_PENDING':
-			state = RequestStateHandler.setStatePending(state);
+			state = RequestState.setStatePending(state);
 			break;
   	case 'DELETE_CURRENT_PAGE_REJECTED':
-			state = RequestStateHandler.setStateRejected(state, action.payload);
+			state = RequestState.setStateRejected(state, action.payload);
 			break;
   	case 'DELETE_CURRENT_PAGE_FULFILLED':
-			state = RequestStateHandler.setStateFulfilled(state);
+			state = RequestState.setStateFulfilled(state);
 			state.page = action.payload.data;
 			break;
 	}
