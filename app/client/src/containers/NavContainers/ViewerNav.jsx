@@ -13,7 +13,7 @@ class ViewerNav extends Component {
   }
 
   onClickDeletePage(){
-    this.props.deletePageByTitle(this.props.title)
+    this.props.deletePageByTitle(this.props.page.title)
   }
 
   render() {
@@ -31,5 +31,5 @@ class ViewerNav extends Component {
 }
 
 export default connectState(ViewerNav, actionCreators, (state) => {
-  return state.currentPage.data;
+  return state.currentPage;
 });
