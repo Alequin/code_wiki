@@ -7,26 +7,37 @@ const defaultPage = {
 }
 
 function allPages(state = defaultPage, action) {
-	if(!state) state == defaultPage;
+	state = Object.assign({}, state)
 	switch(action.type) {
 
     case 'CURRENT_PAGE_PENDING':
-  		return Object.assign({}, state, { fetching: true })
+			state.fetching = true;
+			break;
   	case 'CURRENT_PAGE_REJECTED':
-  		return Object.assign({}, state, { fetching: true, error: action.payload })
+			state.fetching = true;
+			state.error = action.payload;
+			break;
   	case 'CURRENT_PAGE_FULFILLED':
-      return Object.assign({}, state, { fetching: true, fetched: true, page: action.payload.data })
+			state.fetching = true;
+			state.fetched = true;
+			state.page = action.payload.data;
+			break;
 
 		case 'DELETE_CURRENT_PAGE_PENDING':
-  		return Object.assign({}, state, { fetching: true })
+			state.fetching = true;
+			break;
   	case 'DELETE_CURRENT_PAGE_REJECTED':
-  		return Object.assign({}, state, { fetching: true, error: action.payload })
+			state.fetching = true;
+			state.error = action.payload;
+			break;
   	case 'DELETE_CURRENT_PAGE_FULFILLED':
-      return Object.assign({}, state, { fetching: true, fetched: true, data: new Page("", "") })
-
-    default:
-			return state
+			state.fetching = true;
+			state.fetched = true;
+			state.page = action.payload.data;
+			break;
 	}
+
+	return state
 }
 
 export default allPages;
