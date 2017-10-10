@@ -4,7 +4,8 @@ import RequestState from "./RequestState"
 const defaultPage = {
 	page: new Page("", ""),
 	fetching: false,
-	fetched: false
+	fetched: false,
+	error: null
 }
 
 function allPages(state = defaultPage, action) {

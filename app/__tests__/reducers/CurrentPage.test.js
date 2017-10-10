@@ -9,7 +9,8 @@ describe('CurrentPage Reducer', () => {
 		defaultPage = {
 			page: new Page("", ""),
 			fetching: false,
-			fetched: false
+			fetched: false,
+			error: null
 		}
 	})
 
