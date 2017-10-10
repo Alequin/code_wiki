@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import connectState from './../services/ConnectState'
-import * as actionCreators from "./../redux/actions/PageSummariesActionCreator.js"
+import * as actionCreators from "./../redux/actions/indexPageActionCreator.js"
 
 import PageSummary from "./../components/PageSummary.jsx"
 
@@ -49,5 +49,5 @@ class Index extends Component {
 }
 
 export default connectState(Index, actionCreators, (state) => {
-  return state.summaries
+  return state.indexPage
 });

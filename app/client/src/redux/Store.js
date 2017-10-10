@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise-middleware'
 
-import pageSummariesReducer from "./reducers/PageSummaries.js"
+import pageSummariesReducer from "./reducers/indexPage.js"
 import currentPageReducer from "./reducers/CurrentPage.js"
 import makerPageReducer from "./reducers/Maker.js"
 
@@ -18,7 +18,7 @@ export { history }
 const middleware = applyMiddleware(promise(), routerStuff, thunk);
 
 const reducers = combineReducers({
-    summaries: pageSummariesReducer,
+    indexPage: pageSummariesReducer,
     currentPage: currentPageReducer,
     maker: makerPageReducer
   }
