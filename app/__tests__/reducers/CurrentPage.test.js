@@ -14,8 +14,32 @@ describe('CurrentPage Reducer', () => {
 		}
 	})
 
-	it(`CURRENT_PAGE_FULFILLED: should set fetching and fetched to true and set
-			property page to payload.data`, () => {
+	it(`CURRENT_PAGE_PENDING: set fetching to true / set fetched to false /
+	 set error to null`, () => {
+		const action = {
+			type: "CURRENT_PAGE_PENDING"
+		}
+		const result = currentPageReducer(defaultPage, action);
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(false);
+		expect(result.error).toBe(null);
+	})
+
+	it(`CURRENT_PAGE_REJECTED: set fetching to true / set fetched to false / set error to payload`, () => {
+		const errorPayload = {error: "returned object"}
+		const action = {
+			type: "CURRENT_PAGE_REJECTED",
+			payload: errorPayload
+		}
+
+		const result = currentPageReducer(defaultPage, action)
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(false);
+		expect(result.error).toBe(errorPayload);
+	})
+
+	it(`CURRENT_PAGE_FULFILLED: set fetching to true / set fetched to true / set error to null /
+			set page to payload.data`, () => {
 		const payload = {data: new Page("title", "summary")}
 		const action = {
 			type: "CURRENT_PAGE_FULFILLED",
@@ -23,11 +47,38 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = currentPageReducer(defaultPage, action)
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(true);
+		expect(result.error).toBe(null);
 		expect(result.page).toBe(payload.data);
 	})
 
-	it(`DELETE_CURRENT_PAGE_FULFILLED: should set fetching and fetched to true and set
-			property page to payload.data`, () => {
+	it(`DELETE_CURRENT_PAGE_PENDING: set fetching to true / set fetched to false /
+	 set error to null`, () => {
+		const action = {
+			type: "DELETE_CURRENT_PAGE_PENDING"
+		}
+		const result = currentPageReducer(defaultPage, action);
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(false);
+		expect(result.error).toBe(null);
+	})
+
+	it(`DELETE_CURRENT_PAGE_REJECTED: set fetching to true / set fetched to false / set error to payload`, () => {
+		const errorPayload = {error: "returned object"}
+		const action = {
+			type: "DELETE_CURRENT_PAGE_REJECTED",
+			payload: errorPayload
+		}
+
+		const result = currentPageReducer(defaultPage, action)
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(false);
+		expect(result.error).toBe(errorPayload);
+	})
+
+	it(`DELETE_CURRENT_PAGE_FULFILLED: set fetching to true / set fetched to true / set error to null /
+			set page to payload.data`, () => {
 		const payload = {data: new Page("", "")}
 		const action = {
 			type: "DELETE_CURRENT_PAGE_FULFILLED",
@@ -35,6 +86,9 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = currentPageReducer(defaultPage, action)
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(true);
+		expect(result.error).toBe(null);
 		expect(result.page).toBe(payload.data);
 	})
 })
