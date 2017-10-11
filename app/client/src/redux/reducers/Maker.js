@@ -25,14 +25,13 @@ function maker(state = defaultState, action) {
 
 		case "ADD_TEXT_CONTENT":
 	    page.addTextContent("", "")
-			state = page;
       break
 
-		case "EDIT_TEXT_CONTENT_TITLE":
+		case "EDIT_CONTENT_TITLE":
 			page.content[payload.position].title = payload.title
 			break
 
-		case "EDIT_TEXT_CONTENT_VALUE":
+		case "EDIT_CONTENT_VALUE":
 			page.content[payload.position].value = payload.value
 			break
 

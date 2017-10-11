@@ -30,7 +30,7 @@ export function addTextContent(){
 
 export function editTextContentTitle(title, position){
 	return {
-		type: 'EDIT_TEXT_CONTENT_TITLE',
+		type: 'EDIT_CONTENT_TITLE',
 		payload: {
 			title: title,
 			position: position
@@ -40,7 +40,7 @@ export function editTextContentTitle(title, position){
 
 export function editTextContentValue(value, position){
 	return {
-		type: 'EDIT_TEXT_CONTENT_VALUE',
+		type: 'EDIT_CONTENT_VALUE',
 		payload: {
 			value: value,
 			position: position
