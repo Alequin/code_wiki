@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter'
 
 const mock = new MockAdapter(axios);
 
-describe('CurrentPage Reducer', () => {
+describe('CurrentPage action creators', () => {
 
 	it(`action getCurrentPageByTitle should return an object with properties type
     equal to CURRENT_PAGE and payload equal to an axios request`, () => {

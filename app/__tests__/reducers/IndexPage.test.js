@@ -1,7 +1,7 @@
 import indexPageReducer from './../../client/src/redux/reducers/IndexPage'
 import Page from './../../models/Page.js'
 
-describe('CurrentPage Reducer', () => {
+describe('IndexPage Reducer', () => {
 
 	let defaultSummary
 

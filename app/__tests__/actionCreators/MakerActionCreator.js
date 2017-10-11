@@ -1,10 +1,10 @@
-import * as actionCreators from './../../client/src/redux/actions/IndexPageActionCreator'
+import * as actionCreators from './../../client/src/redux/actions/MakerActionCreator'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 
 const mock = new MockAdapter(axios);
 
-describe('index page action creators', () => {
+describe('CurrentPage Reducer', () => {
 
 	it(`action getPageSummaries should return an object with properties type
     equal to PAGES_SUMMARIES and payload equal to an axios request`, () => {
