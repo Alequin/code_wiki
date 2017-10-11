@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import connectState from './../services/ConnectState'
 import * as actionCreators from "./../redux/actions/indexPageActionCreator.js"
+console.log(actionCreators);
 
 import PageSummary from "./../components/PageSummary.jsx"
 
