@@ -25,15 +25,42 @@ describe('CurrentPage Reducer', () => {
 		expect(result.selectedPage).toBe("page 1");
 	})
 
-  it(`PAGES_SUMMARIES_FULFILLED: should set fetching and fetched to true and set
-			data to payload.data`, () => {
+  it(`PAGES_SUMMARIES_PENDING: set fetching to true / set fetched to false /
+	 set error to null`, () => {
+		const action = {
+			type: "PAGES_SUMMARIES_PENDING"
+		}
+		const result = indexPageReducer(defaultSummary, action);
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(false);
+		expect(result.error).toBe(null);
+	})
+
+	it(`PAGES_SUMMARIES_REJECTED: set fetching to true / set fetched to false / set error to payload`, () => {
+		const errorPayload = {error: "returned object"}
+		const action = {
+			type: "PAGES_SUMMARIES_REJECTED",
+			payload: errorPayload
+		}
+
+		const result = indexPageReducer(defaultSummary, action)
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(false);
+		expect(result.error).toBe(errorPayload);
+	})
+
+  it(`PAGES_SUMMARIES_FULFILLED: set fetching to true / set fetched to true / set error to null /
+			set data to payload.data`, () => {
 		const payload = {data: [1,2,3,4]}
 		const action = {
 			type: "PAGES_SUMMARIES_FULFILLED",
 			payload: payload
 		}
 
-		const result = indexPageReducer(defaultSummary, action)
+    const result = indexPageReducer(defaultSummary, action)
+		expect(result.fetching).toBe(true);
+		expect(result.fetched).toBe(true);
+		expect(result.error).toBe(null);
 		expect(result.data).toBe(payload.data);
 	})
 
