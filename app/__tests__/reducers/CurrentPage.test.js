@@ -20,9 +20,10 @@ describe('CurrentPage Reducer', () => {
 			type: "CURRENT_PAGE_PENDING"
 		}
 		const result = currentPageReducer(defaultPage, action);
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(false);
-		expect(result.error).toBe(null);
+		defaultPage.fetching = true
+		defaultPage.fetched = false
+		defaultPage.error = null
+		expect(result).toEqual(defaultPage);
 	})
 
 	it(`CURRENT_PAGE_REJECTED: set fetching to true / set fetched to false / set error to payload`, () => {
@@ -33,9 +34,10 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = currentPageReducer(defaultPage, action)
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(false);
-		expect(result.error).toBe(errorPayload);
+		defaultPage.fetching = true
+		defaultPage.fetched = false
+		defaultPage.error = errorPayload
+		expect(result).toEqual(defaultPage);
 	})
 
 	it(`CURRENT_PAGE_FULFILLED: set fetching to true / set fetched to true / set error to null /
@@ -47,10 +49,11 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = currentPageReducer(defaultPage, action)
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(true);
-		expect(result.error).toBe(null);
-		expect(result.page).toBe(payload.data);
+		defaultPage.fetching = true
+		defaultPage.fetched = true
+		defaultPage.error = null
+		defaultPage.page = payload.data
+		expect(result).toEqual(defaultPage);
 	})
 
 	it(`DELETE_CURRENT_PAGE_PENDING: set fetching to true / set fetched to false /
@@ -59,9 +62,10 @@ describe('CurrentPage Reducer', () => {
 			type: "DELETE_CURRENT_PAGE_PENDING"
 		}
 		const result = currentPageReducer(defaultPage, action);
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(false);
-		expect(result.error).toBe(null);
+		defaultPage.fetching = true
+		defaultPage.fetched = false
+		defaultPage.error = null
+		expect(result).toEqual(defaultPage);
 	})
 
 	it(`DELETE_CURRENT_PAGE_REJECTED: set fetching to true / set fetched to false / set error to payload`, () => {
@@ -72,9 +76,10 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = currentPageReducer(defaultPage, action)
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(false);
-		expect(result.error).toBe(errorPayload);
+		defaultPage.fetching = true
+		defaultPage.fetched = false
+		defaultPage.error = errorPayload
+		expect(result).toEqual(defaultPage);
 	})
 
 	it(`DELETE_CURRENT_PAGE_FULFILLED: set fetching to true / set fetched to true / set error to null /
@@ -86,9 +91,10 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = currentPageReducer(defaultPage, action)
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(true);
-		expect(result.error).toBe(null);
-		expect(result.page).toBe(payload.data);
+		defaultPage.fetching = true
+		defaultPage.fetched = true
+		defaultPage.error = null
+		defaultPage.page = new Page("", "")
+		expect(result).toEqual(defaultPage);
 	})
 })
