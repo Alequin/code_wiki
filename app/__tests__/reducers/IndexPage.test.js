@@ -22,7 +22,8 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = indexPageReducer(defaultSummary, action)
-		expect(result.selectedPage).toBe("page 1");
+		defaultSummary.selectedPage = action.pageTitle
+		expect(result).toEqual(defaultSummary);
 	})
 
   it(`PAGES_SUMMARIES_PENDING: set fetching to true / set fetched to false /
@@ -31,9 +32,10 @@ describe('CurrentPage Reducer', () => {
 			type: "PAGES_SUMMARIES_PENDING"
 		}
 		const result = indexPageReducer(defaultSummary, action);
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(false);
-		expect(result.error).toBe(null);
+		defaultSummary.fetching = true
+		defaultSummary.fetched = false
+		defaultSummary.error = null
+		expect(result).toEqual(defaultSummary);
 	})
 
 	it(`PAGES_SUMMARIES_REJECTED: set fetching to true / set fetched to false / set error to payload`, () => {
@@ -44,9 +46,10 @@ describe('CurrentPage Reducer', () => {
 		}
 
 		const result = indexPageReducer(defaultSummary, action)
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(false);
-		expect(result.error).toBe(errorPayload);
+		defaultSummary.fetching = true
+		defaultSummary.fetched = false
+		defaultSummary.error = errorPayload
+		expect(result).toEqual(defaultSummary);
 	})
 
   it(`PAGES_SUMMARIES_FULFILLED: set fetching to true / set fetched to true / set error to null /
@@ -58,10 +61,11 @@ describe('CurrentPage Reducer', () => {
 		}
 
     const result = indexPageReducer(defaultSummary, action)
-		expect(result.fetching).toBe(true);
-		expect(result.fetched).toBe(true);
-		expect(result.error).toBe(null);
-		expect(result.data).toBe(payload.data);
+		defaultSummary.fetching = true
+		defaultSummary.fetched = true
+		defaultSummary.error = null
+		defaultSummary.data = payload.data
+		expect(result).toEqual(defaultSummary);
 	})
 
 })
