@@ -1,4 +1,3 @@
-import configureMockStore from 'redux-mock-store'
 import * as actionCreators from './../../client/src/redux/actions/CurrentPageActionCreator'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
