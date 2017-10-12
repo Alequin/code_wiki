@@ -4,35 +4,83 @@ import MockAdapter from 'axios-mock-adapter'
 
 const mock = new MockAdapter(axios);
 
-describe('CurrentPage Reducer', () => {
+describe('Maker actions', () => {
 
-	it(`action getPageSummaries should return an object with properties type
-    equal to PAGES_SUMMARIES and payload equal to an axios request`, () => {
-    mock.onGet('http://localhost:3000/db/wiki/summary')
+	it(`postNewPage: returns an object with properties type (set to NEW_PAGE)
+		and payload (set to an axios request)`, () => {
+    mock.onPost('http://localhost:3000/db/wiki/page')
     .reply(200, {body: "page 1"})
 
-    const action = actionCreators.getPageSummaries()
+		const page = {title: "hello", summary: "word"}
+    const action = actionCreators.postNewPage(page)
 
-    expect(action.type).toEqual("PAGES_SUMMARIES")
+    expect(action.type).toEqual("NEW_PAGE")
 
     action.payload
     .then((response) => {
-      expect(response.config.url).toEqual("http://localhost:3000/db/wiki/summary")
+			console.log(response);
+			expect(response.config.url).toEqual("http://localhost:3000/db/wiki/page")
+      expect(JSON.parse(response.config.data)).toEqual(page)
       expect(response.data).toEqual({body: "page 1"})
     })
     .catch((next) => {console.log(next)})
 	})
 
-	it(`action setSelectedPage should return an object with properties type
-    equal to SELECT_PAGE and pageTitle equal the given argument`, () => {
+	it(`editPageTitle: returns an object with properties type (set to EDIT_TITLE)
+		and payload (set to the given argument)`, () => {
+			const title = "this is a title"
+			const result = actionCreators.editPageTitle(title)
+			const expected = {
+				type: 'EDIT_TITLE',
+				payload: title
+			}
+			expect(result).toEqual(expected)
+	})
 
-    const action = actionCreators.setSelectedPage("title")
+	it(`editPageSummary: returns an object with properties type (set to EDIT_SUMMARY)
+		and payload (set to the given argument)`, () => {
+			const summary = "this is a summary"
+			const result = actionCreators.editPageSummary(summary)
+			const expected = {
+				type: 'EDIT_SUMMARY',
+				payload: summary
+			}
+			expect(result).toEqual(expected)
+	})
 
-		const expected = {
-			type: "SELECT_PAGE",
-			pageTitle: "title"
-		}
+	it(`addTextContent: returns an object with property type (set to ADD_TEXT_CONTENT)`, () => {
+			const result = actionCreators.addTextContent()
+			const expected = {
+				type: 'ADD_TEXT_CONTENT',
+			}
+			expect(result).toEqual(expected)
+	})
 
-		expect(action).toEqual(expected)
+	it(`editTextContentTitle: returns an object with properties type (set to EDIT_TEXT_CONTENT_TITLE)
+		and payload (set to an object holding the title value and the position to edit)`, () => {
+			const title = "this is a title"
+			const result = actionCreators.editContentTitle(title, 0)
+			const expected = {
+				type: 'EDIT_CONTENT_TITLE',
+				payload: {
+					title: title,
+					position: 0
+				}
+			}
+			expect(result).toEqual(expected)
+	})
+
+	it(`editTextContentValue: returns an object with properties type (set to EDIT_TEXT_CONTENT_VALUE)
+		and payload (set to an object holding the value of value and the position to edit)`, () => {
+			const value = "this is a value"
+			const result = actionCreators.editContentValue(value, 0)
+			const expected = {
+				type: 'EDIT_CONTENT_VALUE',
+				payload: {
+					value: value,
+					position: 0
+				}
+			}
+			expect(result).toEqual(expected)
 	})
 })
