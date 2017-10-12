@@ -22,12 +22,12 @@ class TextContentInput extends Component {
   }
 
   onEditTitle(event){
-    this.props.editTextContentTitle(event.target.value, this.props.position)
+    this.props.editContentTitle(event.target.value, this.props.position)
     this.forceUpdate()
   }
 
   onEditContent(event){
-    this.props.editTextContentValue(event.target.value, this.props.position)
+    this.props.editContentValue(event.target.value, this.props.position)
     this.forceUpdate()
   }
 

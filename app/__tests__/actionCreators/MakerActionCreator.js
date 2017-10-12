@@ -56,7 +56,7 @@ describe('Maker actions', () => {
 			expect(result).toEqual(expected)
 	})
 
-	it(`editTextContentTitle: returns an object with properties type (set to EDIT_TEXT_CONTENT_TITLE)
+	it(`editContentTitle: returns an object with properties type (set to EDIT_TEXT_CONTENT_TITLE)
 		and payload (set to an object holding the title value and the position to edit)`, () => {
 			const title = "this is a title"
 			const result = actionCreators.editContentTitle(title, 0)
@@ -70,7 +70,7 @@ describe('Maker actions', () => {
 			expect(result).toEqual(expected)
 	})
 
-	it(`editTextContentValue: returns an object with properties type (set to EDIT_TEXT_CONTENT_VALUE)
+	it(`editContentValue: returns an object with properties type (set to EDIT_TEXT_CONTENT_VALUE)
 		and payload (set to an object holding the value of value and the position to edit)`, () => {
 			const value = "this is a value"
 			const result = actionCreators.editContentValue(value, 0)
